@@ -1,6 +1,6 @@
+from log_analysis.class_log import class_log
 
 if __name__ == '__main__':
-    #1.analysis log
-    log_analysis_obj =
-    #2. 
-    
+    obj = class_log('./log_dir/q19.sql.log','q19.xml')
+    obj.getAttri()
+    obj.writeToXML()
