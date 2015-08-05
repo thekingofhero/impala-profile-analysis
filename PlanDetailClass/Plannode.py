@@ -1,17 +1,17 @@
 #-*- coding:utf-8 -*-
 import re
-from pyglet.window.key import NUM_INSERT
 class Plannode:
     def __init__(self,plnode,obj_node,num_ins,logging):
         self.plnode = plnode
         self.logging = logging
         self.attri = {}
         self.obj_node = obj_node
-        self.num_ins = NUM_INSERT
+        self.num_ins = num_ins
         self.node_case = {
                             'RowsReturned':'rows_returned',
                             'ProbeRows':'probe_rows',
-                            'BuildRows':'build_rows'
+                            'BuildRows':'build_rows',
+                            'RowsRead': 'rows_read'
                           }
         
         

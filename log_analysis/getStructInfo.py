@@ -5,7 +5,7 @@ from PlanStructClass.DSM_sink import DSM_sink
 import re
 
 
-class FragmentInfo:
+class StructInfo:
     def __init__(self, logfile,logging):
         self.logging = logging
         self.logfile = logfile

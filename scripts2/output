@@ -1,0 +1,72 @@
+Python Version 3.4.3
+3.77 1.208 2.5620000000000003
+HASHJOIN_BUILD_COST,4,0.004162810949791927
+HASHJOIN_BUILD_COST,6,0.020265647918085307
+HASHJOIN_BUILD_COST,5,0.005030265497178358
+HASHJOIN_BUILD_COST,9,0.013640550273637376
+HASHJOIN_PROBE_COST,4,0.022687577346235343
+HASHJOIN_PROBE_COST,6,0.024402621545686783
+HASHJOIN_PROBE_COST,5,0.022567436313877785
+HASHJOIN_PROBE_COST,9,0.0032471680967018288
+AGGREGATE_BUILD_COST,7,0.008098
+AGGREGATE_BUILD_COST,15,0.002406
+EXCH_ROW_BATCH_CONVERT_COST,12,0.7564352567198914
+EXCH_ROW_BATCH_CONVERT_COST,16,1.6596181860067831
+EXCH_ROW_BATCH_CONVERT_COST,14,1.1967262362565767
+EXCH_ROW_BATCH_CONVERT_COST,13,0.5250538637889673
+EXCH_ROW_BATCH_CONVERT_COST,17,0.0
+EXCH_ROW_BATCH_CONVERT_COST,11,0.5641754006010032
+EXCH_DESER_COST,12,0.19979874957256766
+EXCH_DESER_COST,16,0.41695360892451533
+EXCH_DESER_COST,14,0.3637033431813572
+EXCH_DESER_COST,13,0.42573648610131065
+EXCH_DESER_COST,17,0.27163734121574273
+EXCH_DESER_COST,11,0.202823022744118
+ROW_BATCH_SER_COST,12,0.2871462651288
+ROW_BATCH_SER_COST,16,0.4616196072213287
+ROW_BATCH_SER_COST,14,0.14906515464010697
+ROW_BATCH_SER_COST,13,0.6893295062234627
+ROW_BATCH_SER_COST,17,0.08903126087338563
+ROW_BATCH_SER_COST,11,0.27210548001648127
+DECOMPRESSION_RATIO,12,1.877439024390244
+DECOMPRESSION_RATIO,16,1.6705373864803823
+DECOMPRESSION_RATIO,14,1.730633194415339
+DECOMPRESSION_RATIO,13,1.9346816594389225
+DECOMPRESSION_RATIO,17,1.8238266700208738
+DECOMPRESSION_RATIO,11,2.0763173834039974
+PARSER_DELIMITER_TIME,3,0.018368
+PARSER_DELIMITER_TIME,8,0.004415
+PARSER_DELIMITER_TIME,1,0.003680
+PARSER_DELIMITER_TIME,0,0.003607
+PARSER_DELIMITER_TIME,2,0.002017
+MATERIALIZE_TUPLE_TIME,3,0.025251
+MATERIALIZE_TUPLE_TIME,8,0.035051
+MATERIALIZE_TUPLE_TIME,1,0.022935
+MATERIALIZE_TUPLE_TIME,0,0.006132
+MATERIALIZE_TUPLE_TIME,2,0.022458
+collect data distribution infor from [E:\impala_simulator\resource\profiles\text\profiles\q79.sql.log]
+plan node id 3
+<upper_boundary_scan_range_ratio>1.0</upper_boundary_scan_range_ratio>
+<lower_boundary_scan_range_ratio>1.0</lower_boundary_scan_range_ratio>
+<upper_boundary_disk_splits_ratio>1.0</upper_boundary_disk_splits_ratio>
+<lower_boundary_disk_splits_ratio>1.0</lower_boundary_disk_splits_ratio>
+plan node id 8
+<upper_boundary_scan_range_ratio>1.0</upper_boundary_scan_range_ratio>
+<lower_boundary_scan_range_ratio>1.0</lower_boundary_scan_range_ratio>
+<upper_boundary_disk_splits_ratio>1.0</upper_boundary_disk_splits_ratio>
+<lower_boundary_disk_splits_ratio>1.0</lower_boundary_disk_splits_ratio>
+plan node id 1
+<upper_boundary_scan_range_ratio>1.0</upper_boundary_scan_range_ratio>
+<lower_boundary_scan_range_ratio>1.0</lower_boundary_scan_range_ratio>
+<upper_boundary_disk_splits_ratio>1.0</upper_boundary_disk_splits_ratio>
+<lower_boundary_disk_splits_ratio>1.0</lower_boundary_disk_splits_ratio>
+plan node id 0
+<upper_boundary_scan_range_ratio>1.303370786516854</upper_boundary_scan_range_ratio>
+<lower_boundary_scan_range_ratio>0.7191011235955056</lower_boundary_scan_range_ratio>
+<upper_boundary_disk_splits_ratio>1.4482758620689655</upper_boundary_disk_splits_ratio>
+<lower_boundary_disk_splits_ratio>0.4137931034482759</lower_boundary_disk_splits_ratio>
+plan node id 2
+<upper_boundary_scan_range_ratio>1.0</upper_boundary_scan_range_ratio>
+<lower_boundary_scan_range_ratio>1.0</lower_boundary_scan_range_ratio>
+<upper_boundary_disk_splits_ratio>1.0</upper_boundary_disk_splits_ratio>
+<lower_boundary_disk_splits_ratio>1.0</lower_boundary_disk_splits_ratio>

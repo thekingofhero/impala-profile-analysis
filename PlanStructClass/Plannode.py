@@ -1,59 +1,14 @@
+#-*- coding:utf-8 -＊-
 import re
 from config import local_config
+from scripts.utility import get_partition_size,get_size_in_bytes
+
 class Plannode:
-#     def __init__(self,pl_i,plnode,logging,LR): 
-#         self.attri_dic = {}
-#         self.logging = logging
-#         self.attri_dic['lr'] = LR
-#         
-#         if pl_i == 0 :
-#             self.attri_dic['is_plan_root'] = 'true'
-#         else:
-#             self.attri_dic['is_plan_root'] = 'false'
-#             
-#         plnode_lines = plnode.split('\n')
-#         for line in plnode_lines:
-#             line = line.strip()
-#             line = line.strip('|')
-#             line = line.strip('--')
-#             line = line.strip()
-#             if ':' in line:
-#                 if line.count(':') > 1:
-#                     continue
-#                 line_key,line_val = line.split(':')
-#                 if line_key.isdigit():
-#                     distribution_type = {}
-#                     if ' [' in line_val:
-#                         dispname ,dist_type = line_val.split(' [')
-#                         dist_type = dist_type.strip(']')
-#                         if ', ' in dist_type :
-#                             join_type,dist_type = dist_type.split(', ')
-#                             self.attri_dic['join_type'] = join_type
-#                         self.ana_Distributiontype(dist_type)
-#                     else:
-#                         dispname = line_val
-#                     self.attri_dic['display_name'] = dispname
-#                   
-#                     self.attri_dic['nid'] = str(int(line_key))
-#                 if 'limit' in line_key \
-#                     or 'LIMIT' in line_val:
-#                     limit_num = line[line.lower().find('limit')+5:]
-#                     for char_sp in local_config()['char_list']:
-#                         limit_num = limit_num.strip(char_sp)
-#                     self.attri_dic['limit'] = str(int(limit_num))
-#             else:
-#                 if 'tuple-ids' in line \
-#                     and 'row-size' in line \
-#                     and 'cardinality' in line:
-#                     tuple_ids,row_size,cardinality, = line.split(' ')
-#                     self.attri_dic['tuple-ids'] = tuple_ids.split('=')[1]
-#                     self.attri_dic['row-size'] = str(int(row_size.split('=')[1][:-1]))
-                    
     def __init__(self,pl_i,plnode,logging,LR):
         self.attri_dic = {}
         self.logging = logging
         self.attri_dic['lr'] = LR
-        
+        with_scan_hdfs = False
         if pl_i == 0 :
             self.attri_dic['is_plan_root'] = 'true'
         else:
@@ -79,7 +34,9 @@ class Plannode:
                         scan_db,scan_tbl = scan_table.split('.')
                         self.attri_dic['database_name'] = scan_db
                         self.attri_dic['table'] = scan_tbl
-                        self.ana_Distributiontype(dist_type)
+                        #self.ana_Distributiontype(dist_type)
+                        if local_config()['partitioned_table_name'] in node_type_attri:
+                            with_scan_hdfs = True
                     elif re.match('TOP-N', node_type):
                         self.attri_dic['limit'] = str(int(node_type_attri.split('=')[1]))
                     else:    
@@ -92,14 +49,41 @@ class Plannode:
                 m = re.match('partitions=\d+/\d+',line)
                 if m:
                     self.attri_dic['partitions'] = str(m.group(0).split('=')[1]) 
-                    
+            #data percentage，只需执行一次，获得data_percentage属性
+            if with_scan_hdfs:
+                self.collect_data_percentage(lines=plnode.split('\n'),total_table_size_in_bytes = local_config()['total_table_size_in_bytes'])
+                with_scan_hdfs = False
+                           
             if 'tuple-ids' in line \
                     and 'row-size' in line \
                     and 'cardinality' in line:
                     tuple_ids,row_size,cardinality, = line.split(' ')
                     self.attri_dic['tuple-ids'] = tuple_ids.split('=')[1]
                     self.attri_dic['row-size'] = str(int(row_size.split('=')[1][:-1]))
-            
+                    
+    def collect_data_percentage(self,lines,total_table_size_in_bytes):
+        for line in lines:
+            line = line.strip()
+            if line.startswith("partitions="):
+                
+                partition_info = get_partition_size(line)
+    
+                actual_partition_size = int(partition_info[0])
+                total_partition_size = int(partition_info[1])
+    
+                index = line.find("size=")
+                size_in_bytes = 0
+                data_percentage = 0.0
+    
+                if actual_partition_size == total_partition_size:
+                    size_in_bytes = total_table_size_in_bytes
+                    data_percentage = 1.0
+                elif index != -1:
+                    size_in_str = line[index+len("size="):]                    
+                    size_in_bytes = get_size_in_bytes(size_in_str)
+                    data_percentage = size_in_bytes / total_table_size_in_bytes                    
+                self.attri_dic['data_percentage'] = str("%f"%(data_percentage))
+
     def ana_Distributiontype(self,dist_type):
         if re.compile('HASH\((\w+.)+\)').match(dist_type):
             dist_mode="PARTITIONED"
@@ -165,5 +149,7 @@ class Plannode:
             des_dic['table'] = self.attri_dic['table']
         if 'partitions' in self.attri_dic.keys():
             des_dic['partitions'] = self.attri_dic['partitions']
+        if 'data_percentage' in self.attri_dic.keys():
+            des_dic['data_percentage'] = self.attri_dic['data_percentage']
         return des_dic
         

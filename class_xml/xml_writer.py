@@ -18,13 +18,15 @@ class xml_node:
         return item
     
 class xml_writers:
-    def __init__(self,xml_file):
+    def __init__(self,xml_file,query_name):
         self.impl = getDOMImplementation()
         self.xml_file = xml_file
+        self.query_name = query_name
         
     def create_dom(self):
         self.dom = self.impl.createDocument(None, 'execution_plan', None)
         self.root = self.dom.documentElement
+        self.root.setAttribute('query',self.query_name)
         return self.dom
         
     def root_append(self,item):
@@ -36,7 +38,7 @@ class xml_writers:
     def save_xml(self):
         self.root.toprettyxml()
         fp = open(self.xml_file,'w')
-        self.dom.writexml(fp, addindent='\t', newl='\n', encoding='utf-8')
+        self.dom.writexml(fp, addindent='\t', newl='\n')
         fp.close()
         
 

@@ -4,7 +4,7 @@ from compiler.ast import Node, nodes
 from PlanDetailClass.Plannode import Plannode
 from PlanDetailClass.Fragment import Fragment
 
-class PlannodeInfo:
+class DetailInfo:
     def __init__(self,logfile,obj_node,logging):
         self.logfile = logfile
         self.logging = logging
@@ -43,7 +43,6 @@ class PlannodeInfo:
         return fragment_info,map(None,r_keys,nodes)
     
     def getAttri(self,):
-#         fp = open('hehe','w')
         fragments = self.getFragments()
         
         
@@ -56,10 +55,9 @@ class PlannodeInfo:
                 plnode = Plannode(node,self.obj_node,fg.getNumIns(),self.logging)
                 plnode_attri = plnode.getAttri()
                 fg_attri['plan_nodes'][plnode_attri['nid']] = plnode_attri['items']
-#            print len(self.attri.keys())
+                #with open('hehe','w') as fp: print >>fp,'lala:',fg.getNumIns()
             self.attri[fg_attri['fid']] = fg_attri['plan_nodes']
-           
+                
         return self.attri    
-#         print >> fp,'lala:',self.attri
-#         fp.close()
+
             

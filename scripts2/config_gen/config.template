@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configurations>
+  
+  <ClusterSettings>
+    
+    <hdfs_block_size_in_mb>128</hdfs_block_size_in_mb>
+
+    <ClusterItemSetting>
+        <ClusterType>CLUSTER_TRADITIONAL_SERVER</ClusterType>
+        <CardNum>12</CardNum>
+        <ProcNumPerCard>4</ProcNumPerCard>
+    </ClusterItemSetting>
+    <ServerSetting>
+        <ServerNum>4</ServerNum>
+        <ProcessorNum>4</ProcessorNum><!-- # processes per server -->
+        <ProcessorType>CPU_XEON_4C_4T</ProcessorType>
+        <CoreNum>10</CoreNum>
+        <ThreadNum>1</ThreadNum>
+        <DiskCount>3</DiskCount>
+        <DiskType>DISK_HDD</DiskType>
+        <NICCount>1</NICCount>
+        <NICType>NIC_1Gbps</NICType>
+        <MemSize>128921.6</MemSize>
+        <MemType>Memory_DDR3_1333</MemType>
+    </ServerSetting>
+    <PerfParameterTuning>
+        <ProcPerfIndicator>1.0</ProcPerfIndicator>
+    </PerfParameterTuning>
+    <SwitchSetting>
+        <SwitchNum>1</SwitchNum>
+        <SwitchType>SWITCH_CISCO_1Gbps</SwitchType>
+    </SwitchSetting>
+    <NetworkSetting>
+        <TopoType>TOPOTYPE_STAR</TopoType>
+        <LinkType>LINK_1Gbps</LinkType>
+    </NetworkSetting>
+
+  </ClusterSettings>
+
+  <SimSetting>
+    <is_wait>true</is_wait>
+    <print_progress_info>true</print_progress_info>
+    
+    
+    <read_range_granularity_ns>${read_range_granularity_ns}</read_range_granularity_ns>
+    <query_executor_execution_granularity_ns>${query_executor_execution_granularity_ns}</query_executor_execution_granularity_ns>
+    <disk_scan_granularity_ns>${disk_scan_granularity_ns}</disk_scan_granularity_ns>
+    <scanner_granularity_ns>${scanner_granularity_ns}</scanner_granularity_ns>
+    
+    <plib_clock_interval_in_ns>1395</plib_clock_interval_in_ns>
+    <impala_server_progress_granularity_ns>15625</impala_server_progress_granularity_ns>
+    <scan_node_progress_granularity_num_rows>10</scan_node_progress_granularity_num_rows>
+    
+    <!-- Parameterized Configurations -->
+    <execution_plan_location>${execution_plan_location}</execution_plan_location>
+    <execution_plan_name>${execution_plan_name}</execution_plan_name>       
+    <metadata_file_path>${metadata_file_path}</metadata_file_path>
+    <tuple_descriptor_file_path>${tuple_descriptor_file_path}</tuple_descriptor_file_path>   
+
+    <average_sort_cost_per_bytes_per_ns>0.05609</average_sort_cost_per_bytes_per_ns>
+    <hash_join_build_phase_cost_per_bytes_per_ns>0.028783221</hash_join_build_phase_cost_per_bytes_per_ns>
+    <aggr_build_phase_cost_per_bytes_per_ns>0.023542577</aggr_build_phase_cost_per_bytes_per_ns>
+  </SimSetting>
+
+  <ImpalaSetting>
+    <row_batch_size>1024</row_batch_size>
+    <read_size>8388608</read_size>
+    <num_threads_per_core>2</num_threads_per_core>
+    <max_row_batch_size>50</max_row_batch_size><!-- 10 * NUM OF DISKS -->
+    <exchg_node_buffer_size_bytes>10485760</exchg_node_buffer_size_bytes><!-- 10 * 1024 * 1024 bytes -->
+    
+    <!-- Parquet Settings -->
+    <parquet_data_page_size_in_bytes>65536</parquet_data_page_size_in_bytes><!-- 64kb -->
+    <parquet_row_group_size_in_bytes>134217728</parquet_row_group_size_in_bytes><!-- 128 mb -->
+    <parquet_footer_size_in_bytes>102400</parquet_footer_size_in_bytes><!-- 100kb -->
+    <parquet_max_page_header_size_in_bytes>100</parquet_max_page_header_size_in_bytes><!-- 100 -->
+  </ImpalaSetting>
+
+
+
+</Configurations>

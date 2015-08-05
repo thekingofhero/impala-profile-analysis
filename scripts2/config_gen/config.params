@@ -1,0 +1,53 @@
+# # For Parquet Format
+
+# Deep Analytic
+parquet_execution_plans|q34.sql.xml|metadata\metadata_parquet_none.xml|stats\tuple_descriptor_q34.sql.xml|150000|3000000|3000000
+# parquet_execution_plans|q46.sql.xml|metadata\metadata_parquet_none.xml|stats\tuple_descriptor_q46.sql.xml|150000|3000000|3000000
+# parquet_execution_plans|q59.sql.xml|metadata\metadata_parquet_none.xml|stats\tuple_descriptor_q59.sql.xml|150000|3000000|3000000
+# parquet_execution_plans|q65.sql.xml|metadata\metadata_parquet_none.xml|stats\tuple_descriptor_q65.sql.xml|150000|3000000|3000000
+# parquet_execution_plans|q79.sql.xml|metadata\metadata_parquet_none.xml|stats\tuple_descriptor_q79.sql.xml|150000|3000000|3000000
+# parquet_execution_plans|ss_max.sql.xml|metadata\metadata_parquet_none.xml|stats\tuple_descriptor_ss_max.sql.xml|150000|3000000|3000000
+
+# # Iteractive
+# parquet_execution_plans|q19.sql.xml|metadata\metadata_parquet_none.xml|stats\tuple_descriptor_q19.sql.xml|150000|3000000|3000000
+# parquet_execution_plans|q42.sql.xml|metadata\metadata_parquet_none.xml|stats\tuple_descriptor_q42.sql.xml|150000|3000000|3000000
+# parquet_execution_plans|q52.sql.xml|metadata\metadata_parquet_none.xml|stats\tuple_descriptor_q52.sql.xml|150000|3000000|3000000
+# parquet_execution_plans|q55.sql.xml|metadata\metadata_parquet_none.xml|stats\tuple_descriptor_q55.sql.xml|150000|3000000|3000000
+# parquet_execution_plans|q63.sql.xml|metadata\metadata_parquet_none.xml|stats\tuple_descriptor_q63.sql.xml|150000|3000000|3000000
+# parquet_execution_plans|q68.sql.xml|metadata\metadata_parquet_none.xml|stats\tuple_descriptor_q68.sql.xml|150000|3000000|3000000
+# parquet_execution_plans|q98.sql.xml|metadata\metadata_parquet_none.xml|stats\tuple_descriptor_q98.sql.xml|150000|3000000|3000000
+
+# # Reporting
+# parquet_execution_plans|q27.sql.xml|metadata\metadata_parquet_none.xml|stats\tuple_descriptor_q27.sql.xml|150000|3000000|3000000
+# parquet_execution_plans|q3.sql.xml|metadata\metadata_parquet_none.xml|stats\tuple_descriptor_q3.sql.xml|150000|3000000|3000000
+# parquet_execution_plans|q43.sql.xml|metadata\metadata_parquet_none.xml|stats\tuple_descriptor_q43.sql.xml|150000|3000000|3000000
+# parquet_execution_plans|q53.sql.xml|metadata\metadata_parquet_none.xml|stats\tuple_descriptor_q53.sql.xml|150000|3000000|3000000
+# parquet_execution_plans|q7.sql.xml|metadata\metadata_parquet_none.xml|stats\tuple_descriptor_q7.sql.xml|150000|3000000|3000000
+# parquet_execution_plans|q89.sql.xml|metadata\metadata_parquet_none.xml|stats\tuple_descriptor_q89.sql.xml|150000|3000000|3000000
+
+# For Text Format
+
+# Deep Analytic
+# execution_plans|q34.sql.xml|metadata\metadata_text_none.xml|stats\tuple_descriptor_q3.xml|900000|900000|900000
+# execution_plans|q46.sql.xml|metadata\metadata_text_none.xml|stats\tuple_descriptor_q3.xml|900000|900000|900000
+# execution_plans|q59.sql.xml|metadata\metadata_text_none.xml|stats\tuple_descriptor_q3.xml|900000|900000|900000
+# execution_plans|q65.sql.xml|metadata\metadata_text_none.xml|stats\tuple_descriptor_q3.xml|900000|900000|900000
+# execution_plans|q79.sql.xml|metadata\metadata_text_none.xml|stats\tuple_descriptor_q3.xml|900000|900000|900000
+# execution_plans|ss_max.sql.xml|metadata\metadata_text_none.xml|stats\tuple_descriptor_q3.xml|900000|900000|900000
+
+# # Interactive
+# execution_plans|q19.sql.xml|metadata\metadata_text_none.xml|stats\tuple_descriptor_q3.xml|900000|900000|900000
+# execution_plans|q42.sql.xml|metadata\metadata_text_none.xml|stats\tuple_descriptor_q3.xml|900000|900000|900000
+# execution_plans|q52.sql.xml|metadata\metadata_text_none.xml|stats\tuple_descriptor_q3.xml|900000|900000|900000
+# execution_plans|q55.sql.xml|metadata\metadata_text_none.xml|stats\tuple_descriptor_q3.xml|900000|900000|900000
+# execution_plans|q63.sql.xml|metadata\metadata_text_none.xml|stats\tuple_descriptor_q3.xml|900000|900000|900000
+# execution_plans|q68.sql.xml|metadata\metadata_text_none.xml|stats\tuple_descriptor_q3.xml|900000|900000|900000
+# execution_plans|q98.sql.xml|metadata\metadata_text_none.xml|stats\tuple_descriptor_q3.xml|900000|900000|900000
+
+# # Reporting
+# execution_plans|q27.sql.xml|metadata\metadata_text_none.xml|stats\tuple_descriptor_q3.xml|900000|900000|900000
+# execution_plans|q3.sql.xml|metadata\metadata_text_none.xml|stats\tuple_descriptor_q3.xml|900000|900000|900000
+# execution_plans|q43.sql.xml|metadata\metadata_text_none.xml|stats\tuple_descriptor_q3.xml|900000|900000|900000
+# execution_plans|q53.sql.xml|metadata\metadata_text_none.xml|stats\tuple_descriptor_q3.xml|900000|900000|900000
+# execution_plans|q7.sql.xml|metadata\metadata_text_none.xml|stats\tuple_descriptor_q3.xml|900000|900000|900000
+# execution_plans|q89.sql.xml|metadata\metadata_text_none.xml|stats\tuple_descriptor_q3.xml|900000|900000|900000

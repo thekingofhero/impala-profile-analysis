@@ -1,0 +1,84 @@
+<execution_plan query="q79.sql">
+  <plan_fragment fid="6" is_root="true">
+        <plan_node nid="17" is_plan_root="true" display_name="MERGING-EXCHANGE" tuple-ids="14" row-size="168" limit="100" dist_mode="PARTITIONED" partition_type="UNPARTITIONED">
+            <rows_returned>149</rows_returned>
+        </plan_node>
+  </plan_fragment>
+  <plan_fragment fid="4" is_root="false">
+        <data_stream_sink fid="06" nid="17" dist_mode="PARTITIONED" partition_type="UNPARTITIONED" />
+        <plan_node nid="10" is_plan_root="false" display_name="TOP-N" children="16" tuple-ids="14" row-size="168" limit="100">
+            <rows_returned>100</rows_returned>
+        </plan_node>
+        <plan_node nid="09" is_plan_root="false" display_name="HASH JOIN" children="28,29" tuple-ids="2,4,5,9,11,12" row-size="236" join_type="INNER JOIN" dist_mode="BROADCAST">
+            <rows_returned>45612</rows_returned>
+            <probe_rows>6570</probe_rows>
+            <build_rows>6588</build_rows>
+        </plan_node>
+        <plan_node nid="16" is_plan_root="false" display_name="EXCHANGE" children="" tuple-ids="9,11,12" row-size="108" dist_mode="BROADCAST">
+            <rows_returned>6588</rows_returned>
+        </plan_node>        
+        <plan_node nid="15" is_plan_root="true" display_name="AGGREGATE" children="10" tuple-ids="9" row-size="64">
+            <rows_returned>17866</rows_returned>
+        </plan_node>
+        <plan_node nid="14" is_plan_root="false" display_name="EXCHANGE" children="" tuple-ids="9,11,12" row-size="108" dist_mode="PARTITIONED" partition_type="HASH">
+            <rows_returned>6570</rows_returned>
+        </plan_node>
+  </plan_fragment>
+  <plan_fragment fid="5" is_root="false">
+        <data_stream_sink fid="04" nid="16" dist_mode="BROADCAST" />
+        <plan_node nid="08" is_plan_root="true" display_name="SCAN HDFS" database_name="tpcds_text" table="date_dim_text" partitions="1/1" tuple-ids="5" row-size="8">
+            <rows_returned>365</rows_returned>
+        </plan_node>
+  </plan_fragment>
+  <plan_fragment fid="0" is_root="false">
+        <data_stream_sink fid="04" nid="14" dist_mode="PARTITIONED" partition_type="HASH" />
+        <plan_node nid="07" is_plan_root="true" display_name="AGGREGATE" children="10" tuple-ids="9" row-size="64">
+            <rows_returned>17866</rows_returned>
+        </plan_node>
+        <plan_node nid="06" is_plan_root="false" display_name="HASH JOIN" children="28,29" tuple-ids="2,4,5,9,11,12" row-size="236" join_type="INNER JOIN" dist_mode="BROADCAST">
+            <rows_returned>45612</rows_returned>
+            <probe_rows>6570</probe_rows>
+            <build_rows>6588</build_rows>
+        </plan_node>
+        <plan_node nid="13" is_plan_root="false" display_name="EXCHANGE" children="" tuple-ids="9,11,12" row-size="108" dist_mode="BROADCAST">
+            <rows_returned>6588</rows_returned>
+        </plan_node>        
+        <plan_node nid="05" is_plan_root="false" display_name="HASH JOIN" children="28,29" tuple-ids="2,4,5,9,11,12" row-size="236" join_type="INNER JOIN" dist_mode="BROADCAST">
+            <rows_returned>45612</rows_returned>
+            <probe_rows>6570</probe_rows>
+            <build_rows>6588</build_rows>
+        </plan_node>
+        <plan_node nid="12" is_plan_root="false" display_name="EXCHANGE" children="" tuple-ids="9,11,12" row-size="108" dist_mode="BROADCAST">
+            <rows_returned>6588</rows_returned>
+        </plan_node>        
+        <plan_node nid="04" is_plan_root="false" display_name="HASH JOIN" children="28,29" tuple-ids="2,4,5,9,11,12" row-size="236" join_type="INNER JOIN" dist_mode="BROADCAST">
+            <rows_returned>45612</rows_returned>
+            <probe_rows>6570</probe_rows>
+            <build_rows>6588</build_rows>
+        </plan_node>
+        <plan_node nid="11" is_plan_root="false" display_name="EXCHANGE" children="" tuple-ids="9,11,12" row-size="108" dist_mode="BROADCAST">
+            <rows_returned>6588</rows_returned>
+        </plan_node>        
+        <plan_node nid="00" is_plan_root="true" display_name="SCAN HDFS" database_name="tpcds_text" table="date_dim_text" partitions="1/1" tuple-ids="5" row-size="8">
+            <rows_returned>365</rows_returned>
+        </plan_node>
+  </plan_fragment>
+  <plan_fragment fid="3" is_root="false">
+        <data_stream_sink fid="00" nid="13" dist_mode="BROADCAST" />
+        <plan_node nid="03" is_plan_root="true" display_name="SCAN HDFS" database_name="tpcds_text" table="date_dim_text" partitions="1/1" tuple-ids="5" row-size="8">
+            <rows_returned>365</rows_returned>
+        </plan_node>
+  </plan_fragment>
+  <plan_fragment fid="2" is_root="false">
+        <data_stream_sink fid="00" nid="12" dist_mode="BROADCAST" />
+        <plan_node nid="02" is_plan_root="true" display_name="SCAN HDFS" database_name="tpcds_text" table="date_dim_text" partitions="1/1" tuple-ids="5" row-size="8">
+            <rows_returned>365</rows_returned>
+        </plan_node>
+  </plan_fragment>
+  <plan_fragment fid="1" is_root="false">
+        <data_stream_sink fid="00" nid="11" dist_mode="BROADCAST" />
+        <plan_node nid="01" is_plan_root="true" display_name="SCAN HDFS" database_name="tpcds_text" table="date_dim_text" partitions="1/1" tuple-ids="5" row-size="8">
+            <rows_returned>365</rows_returned>
+        </plan_node>
+  </plan_fragment>
+</execution_plan>

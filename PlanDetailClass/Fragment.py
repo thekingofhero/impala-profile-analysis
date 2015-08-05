@@ -17,7 +17,7 @@ class Fragment:
             r = 'num instances'
             m = re.search(r,line)
             if m and 'num_ins' not in self.attri_dic.keys():
-                self.attri_dic['num_ins'] = str(int(line.split(':')[-1]))
+                self.attri_dic['num_ins'] = int(line.split(':')[-1])
         self.attri_dic['plan_nodes'] = {}
         
     def getAttri(self):
