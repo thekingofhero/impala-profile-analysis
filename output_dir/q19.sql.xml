@@ -59,7 +59,7 @@
 		<plan_node children="" display_name="EXCHANGE" dist_mode="BROADCAST" is_plan_root="false" nid="14" row-size="75" tuple-ids="2">
 			<rows_returned>4488</rows_returned>
 		</plan_node>
-		<plan_node children="" data_percentage="0.000505" database_name="tpcds_text_50" display_name="SCAN HDFS" is_plan_root="false" nid="1" partitions="30/1823" row-size="24" table="store_sales_text" tuple-ids="1">
+		<plan_node children="" data_percentage="0.031987" database_name="tpcds_text_50" display_name="SCAN HDFS" is_plan_root="false" nid="1" partitions="30/1823" row-size="24" table="store_sales_text" tuple-ids="1">
 			<rows_read>4399048</rows_read>
 			<rows_returned>4399048</rows_returned>
 		</plan_node>

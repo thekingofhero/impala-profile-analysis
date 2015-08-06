@@ -26,6 +26,7 @@ def get_task_dic():
     return task_dic
 
 if __name__ == '__main__':
+    os.system('rm -f ./output_dir/* ')
     task_dic = get_task_dic()
     for task in task_dic.keys():
         obj = class_log(task_dic[task][0],task_dic[task][1],logging)
