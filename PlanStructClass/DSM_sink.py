@@ -16,7 +16,7 @@ class DSM_sink:
                 self.attri_dic[key] = distribution_type[key]
     def ana_Distributiontype(self,dist_type):
         distribution_type = {}
-        if re.compile('HASH\((\w+.)+\)').match(dist_type):
+        if re.compile('HASH').match(dist_type):
             dist_mode="PARTITIONED"
             partition_type="HASH"
             distribution_type['dist_mode'] = dist_mode

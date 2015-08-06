@@ -28,12 +28,17 @@ class Plannode:
                     if re.match('HASH JOIN',node_type):
                         join_type,dist_type = node_type_attri.split(', ')
                         self.attri_dic['join_type'] = join_type
-                        self.ana_Distributiontype(dist_type)
+                        #self.ana_Distributiontype(dist_type)
                     elif re.match('SCAN HDFS', node_type):
                         scan_table,dist_type = node_type_attri.split(', ')
                         scan_db,scan_tbl = scan_table.split('.')
+                        if ' ' in scan_db:
+                            scan_db = scan_db.split(' ')[0]
+                        if ' ' in scan_tbl:
+                            scan_tbl = scan_tbl.split(' ')[0]
                         self.attri_dic['database_name'] = scan_db
                         self.attri_dic['table'] = scan_tbl
+                        
                         #self.ana_Distributiontype(dist_type)
                         if local_config()['partitioned_table_name'] in node_type_attri:
                             with_scan_hdfs = True
@@ -85,7 +90,7 @@ class Plannode:
                 self.attri_dic['data_percentage'] = str("%f"%(data_percentage))
 
     def ana_Distributiontype(self,dist_type):
-        if re.compile('HASH\((\w+.)+\)').match(dist_type):
+        if re.compile('HASH').match(dist_type):
             dist_mode="PARTITIONED"
             partition_type="HASH"
             self.attri_dic['dist_mode'] = dist_mode
