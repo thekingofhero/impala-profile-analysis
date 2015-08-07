@@ -58,7 +58,7 @@ class StructInfo:
                     if fg_attri_dic['pl_nodes'][-2].get_LR() == 'R':
                         dad_offset = 1
                     fg_attri_dic['pl_nodes'][-2 - dad_offset].set_child(plan_node.get_nid())
-                    if plnode_right_child <> [0,''] :
+                    if plnode_right_child != [0,''] :
                         plan_node = Plannode(plnode_right_child[0],plnode_right_child[1],self.logging,'R')
                         fg_attri_dic['pl_nodes'].append(plan_node)
                         fg_attri_dic['pl_nodes'][-3 - dad_offset].set_child(plan_node.get_nid())

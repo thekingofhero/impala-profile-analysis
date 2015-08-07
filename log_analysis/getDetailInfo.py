@@ -1,6 +1,5 @@
 from config import local_config
 import re
-from compiler.ast import Node, nodes
 from PlanDetailClass.Plannode import Plannode
 from PlanDetailClass.Fragment import Fragment
 
@@ -38,9 +37,10 @@ class DetailInfo:
         nn = re.split(r, fragment)
         fragment_info = nn[0]
         nodes = nn[1:]
-        if len(nodes) <> len(r_keys):
+        if len(nodes) != len(r_keys):
             self.logging.error( 'node,keys unequal')
-        return fragment_info,map(None,r_keys,nodes)
+        
+        return fragment_info,map(lambda x,y:(x,y),r_keys,nodes)
     
     def getAttri(self,):
         fragments = self.getFragments()
@@ -50,7 +50,6 @@ class DetailInfo:
             fragment_info,nodes = self.getNodes(fragment)
             fg = Fragment(fragment_info,self.logging)
             fg_attri = fg.getAttri()
-            
             for n_key,node in nodes:
                 plnode = Plannode(node,self.obj_node,fg.getNumIns(),self.logging)
                 plnode_attri = plnode.getAttri()

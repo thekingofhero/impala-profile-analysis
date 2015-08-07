@@ -2,7 +2,6 @@ from log_analysis.class_log import class_log
 import logging
 import os
 from config import local_config
-
 logging.basicConfig(
                     level=logging.DEBUG,
                     format="%(asctime)s %(filename)s %(levelname)s %(message)s",
@@ -26,7 +25,10 @@ def get_task_dic():
     return task_dic
 
 if __name__ == '__main__':
-    os.system('rm -f ./output_dir/* ')
+    if 'Linux' in local_config()['current_sys']:
+        os.system('rm -f ./output_dir/* ')
+    elif 'Windows' in local_config()['current_sys']:
+        os.system('del .\output_dir\*  /q ')
     task_dic = get_task_dic()
     for task in task_dic.keys():
         obj = class_log(task_dic[task][0],task_dic[task][1],logging)

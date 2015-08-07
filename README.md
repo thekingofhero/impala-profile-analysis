@@ -9,5 +9,10 @@ simulator's input
 
 2.python main.py
     under python2.7
+    已更新至python3
 
 3.output_dir 下获取执行计划＊.xml
+
+
+PS:目前进度：
+    2015-08-06：生成包含data-percentage的执行计划文件（*.xml）

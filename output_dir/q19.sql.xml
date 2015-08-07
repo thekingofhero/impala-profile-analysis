@@ -22,12 +22,12 @@
 		<plan_node children="10" display_name="AGGREGATE" is_plan_root="true" nid="11" row-size="75" tuple-ids="6">
 			<rows_returned>2332</rows_returned>
 		</plan_node>
-		<plan_node children="9,17" display_name="HASH JOIN" dist_mode="BROADCAST" is_plan_root="false" join_type="INNER JOIN" nid="10" row-size="169" tuple-ids="1,0,2,3,4,5">
+		<plan_node children="9,17" display_name="HASH JOIN" is_plan_root="false" join_type="INNER JOIN" nid="10" row-size="169" tuple-ids="1,0,2,3,4,5">
 			<build_rows>576</build_rows>
 			<probe_rows>80804</probe_rows>
 			<rows_returned>76204</rows_returned>
 		</plan_node>
-		<plan_node children="8,16" display_name="HASH JOIN" dist_mode="BROADCAST" is_plan_root="false" join_type="INNER JOIN" nid="9" row-size="144" tuple-ids="1,0,2,3,4">
+		<plan_node children="8,16" display_name="HASH JOIN" is_plan_root="false" join_type="INNER JOIN" nid="9" row-size="144" tuple-ids="1,0,2,3,4">
 			<build_rows>1532000</build_rows>
 			<probe_rows>80804</probe_rows>
 			<rows_returned>80804</rows_returned>
@@ -35,7 +35,7 @@
 		<plan_node children="" display_name="EXCHANGE" dist_mode="BROADCAST" is_plan_root="false" nid="17" row-size="25" tuple-ids="5">
 			<rows_returned>576</rows_returned>
 		</plan_node>
-		<plan_node children="7,15" display_name="HASH JOIN" dist_mode="BROADCAST" is_plan_root="false" join_type="INNER JOIN" nid="8" row-size="119" tuple-ids="1,0,2,3">
+		<plan_node children="7,15" display_name="HASH JOIN" is_plan_root="false" join_type="INNER JOIN" nid="8" row-size="119" tuple-ids="1,0,2,3">
 			<build_rows>3064000</build_rows>
 			<probe_rows>82780</probe_rows>
 			<rows_returned>80804</rows_returned>
@@ -43,7 +43,7 @@
 		<plan_node children="" display_name="EXCHANGE" dist_mode="BROADCAST" is_plan_root="false" nid="16" row-size="25" tuple-ids="4">
 			<rows_returned>1532000</rows_returned>
 		</plan_node>
-		<plan_node children="6,14" display_name="HASH JOIN" dist_mode="BROADCAST" is_plan_root="false" join_type="INNER JOIN" nid="7" row-size="111" tuple-ids="1,0,2">
+		<plan_node children="6,14" display_name="HASH JOIN" is_plan_root="false" join_type="INNER JOIN" nid="7" row-size="111" tuple-ids="1,0,2">
 			<build_rows>4488</build_rows>
 			<probe_rows>4399048</probe_rows>
 			<rows_returned>82780</rows_returned>
@@ -51,7 +51,7 @@
 		<plan_node children="" display_name="EXCHANGE" dist_mode="BROADCAST" is_plan_root="false" nid="15" row-size="8" tuple-ids="3">
 			<rows_returned>3064000</rows_returned>
 		</plan_node>
-		<plan_node children="1,13" display_name="HASH JOIN" dist_mode="BROADCAST" is_plan_root="false" join_type="INNER JOIN" nid="6" row-size="36" tuple-ids="1,0">
+		<plan_node children="1,13" display_name="HASH JOIN" is_plan_root="false" join_type="INNER JOIN" nid="6" row-size="36" tuple-ids="1,0">
 			<build_rows>120</build_rows>
 			<probe_rows>4399048</probe_rows>
 			<rows_returned>4399048</rows_returned>

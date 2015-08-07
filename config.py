@@ -1,5 +1,6 @@
 #-*- encoding:utf-8 -*-
 import os
+import platform
 def local_config():
     
     profile_path = './log_dir'
@@ -22,4 +23,5 @@ def local_config():
                                  }
     total_table_size_in_bytes = total_table_size_in_bytes_dic[db_size]
     install_dir = os.path.dirname(os.path.realpath(__file__))
+    current_sys = platform.system()
     return locals()

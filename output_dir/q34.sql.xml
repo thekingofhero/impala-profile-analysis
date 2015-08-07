@@ -10,7 +10,7 @@
 		<plan_node children="9" display_name="TOP-N" is_plan_root="true" limit="100000" nid="10" row-size="92" tuple-ids="7">
 			<rows_returned>7052</rows_returned>
 		</plan_node>
-		<plan_node children="15,16" display_name="HASH JOIN" dist_mode="BROADCAST" is_plan_root="false" join_type="INNER JOIN" nid="9" row-size="100" tuple-ids="4,6">
+		<plan_node children="15,16" display_name="HASH JOIN" is_plan_root="false" join_type="INNER JOIN" nid="9" row-size="100" tuple-ids="4,6">
 			<build_rows>3064000</build_rows>
 			<probe_rows>7052</probe_rows>
 			<rows_returned>7052</rows_returned>
@@ -37,12 +37,12 @@
 		<plan_node children="6" display_name="AGGREGATE" is_plan_root="true" nid="7" row-size="16" tuple-ids="4">
 			<rows_returned>76520</rows_returned>
 		</plan_node>
-		<plan_node children="5,13" display_name="HASH JOIN" dist_mode="BROADCAST" is_plan_root="false" join_type="INNER JOIN" nid="6" row-size="102" tuple-ids="0,1,2,3">
+		<plan_node children="5,13" display_name="HASH JOIN" is_plan_root="false" join_type="INNER JOIN" nid="6" row-size="102" tuple-ids="0,1,2,3">
 			<build_rows>2080</build_rows>
 			<probe_rows>11201024</probe_rows>
 			<rows_returned>795300</rows_returned>
 		</plan_node>
-		<plan_node children="4,12" display_name="HASH JOIN" dist_mode="BROADCAST" is_plan_root="false" join_type="INNER JOIN" nid="5" row-size="67" tuple-ids="0,1,2">
+		<plan_node children="4,12" display_name="HASH JOIN" is_plan_root="false" join_type="INNER JOIN" nid="5" row-size="67" tuple-ids="0,1,2">
 			<build_rows>384</build_rows>
 			<probe_rows>18792732</probe_rows>
 			<rows_returned>11201024</rows_returned>
@@ -50,7 +50,7 @@
 		<plan_node children="" display_name="EXCHANGE" dist_mode="BROADCAST" is_plan_root="false" nid="13" row-size="36" tuple-ids="3">
 			<rows_returned>2080</rows_returned>
 		</plan_node>
-		<plan_node children="0,11" display_name="HASH JOIN" dist_mode="BROADCAST" is_plan_root="false" join_type="INNER JOIN" nid="4" row-size="32" tuple-ids="0,1">
+		<plan_node children="0,11" display_name="HASH JOIN" is_plan_root="false" join_type="INNER JOIN" nid="4" row-size="32" tuple-ids="0,1">
 			<build_rows>1004</build_rows>
 			<probe_rows>82379692</probe_rows>
 			<rows_returned>18792732</rows_returned>

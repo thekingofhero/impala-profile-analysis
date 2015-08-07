@@ -33,7 +33,7 @@ class xml_writers:
         self.root.appendChild(item)
         
     def print_self(self):
-        print self.root.toprettyxml()
+        print (self.root.toprettyxml())
     
     def save_xml(self):
         self.root.toprettyxml()
