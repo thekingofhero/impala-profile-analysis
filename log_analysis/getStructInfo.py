@@ -65,7 +65,6 @@ class StructInfo:
                         plnode_right_child = [0,'']
             fr = Fragment(fg_attri_dic)
             frInfo_list.append(fr)
-
         return frInfo_list
 
             

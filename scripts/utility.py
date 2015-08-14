@@ -45,12 +45,12 @@ def handle_profiles(fn_ref, input_path=".", output_dir_path=".", output_file_typ
 	import os
 	if not os.path.exists(output_dir_path):
 		os.makedirs(output_dir_path)
-
 	if os.path.isfile(input_path):
 		file_splits = os.path.split(input_path)
 		filename = file_splits[1]
 		output_file_path = os.path.join(output_dir_path, get_output_name(filename, output_file_type))
 		fn_ref(input_path, output_file_path, output_dir_path);
+		
 	elif os.path.exists(input_path):
 		for subdir, dirs, files in os.walk(input_path):
 			for file in files:				
@@ -106,6 +106,15 @@ def get_time_in_str_ns(time_in_str):
 			time += get_time_by_unit(float(number), 's')		
 			number = ''	
 	return str(time)
+
+def get_non_child_time_in_str(stripped_line):
+
+	start_idx = stripped_line.find('non-child:')
+	end_idx = stripped_line.find(', % non-child:')
+
+	if start_idx != -1 and end_idx != -1:
+		return get_time_in_str_ns(stripped_line[start_idx+10:end_idx])
+
 
 def get_time(stripped_line):	
 	

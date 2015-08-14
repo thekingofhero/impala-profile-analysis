@@ -3,7 +3,7 @@ import os
 import platform
 def local_config():
     
-    profile_path = './log_dir'
+    profile_path = r'.\log_dir\q19.sql.log'
     db_type = 'text'
     db_size = '50'
     

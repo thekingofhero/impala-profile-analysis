@@ -21,10 +21,10 @@ class Plannode:
             nid = re.search('\(id=\d+\)',line) 
             if nid is not None and 'nid' not in self.attri.keys():
                 self.attri['nid'] = str(int(nid.group(0).split('=')[1][:-1]))
-            for item in self.node_case:
+            for item in self.node_case.keys():
                 #两个IF的顺序不能反，先匹配带()的，再匹配无括号的。原因是re.match并不是完全匹配，只是从字符串的开头匹配，然后返回第一次出现
                 ## - RowsReturned: 20.20K (20201)
-                rows = re.match('\s+- %s: \d+(\.\d+)?\w \(\d+\)'%(item),line)
+                rows = re.match('\s+- %s: \d+(\.\d+)?\w* \(\d+\)'%(item),line)
 #                 print '\s+- %s: \d+(\.\d+)?\w \(\d+\)'%(item)
                 if rows:
                     temp = str(int(rows.group(0).split('(')[-1].strip(')')) * self.num_ins)
