@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<tuple_descriptors>
+  <tuple_descriptor byte_size="24" tbl="tpcds_parquet_3000.store_sales_parquet" tuple_id="0">
+    <slot_descriptor byteOffset="4" byte_size="4" id="0" name="ss_ticket_number"/>
+    <slot_descriptor byteOffset="8" byte_size="4" id="1" name="ss_customer_sk"/>
+    <slot_descriptor byteOffset="12" byte_size="4" id="2" name="ss_sold_date_sk"/>
+    <slot_descriptor byteOffset="16" byte_size="4" id="4" name="ss_store_sk"/>
+    <slot_descriptor byteOffset="20" byte_size="4" id="6" name="ss_hdemo_sk"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="16" tbl="tpcds_parquet_3000.date_dim_parquet" tuple_id="1">
+    <slot_descriptor byteOffset="4" byte_size="4" id="3" name="d_date_sk"/>
+    <slot_descriptor byteOffset="8" byte_size="4" id="8" name="d_dom"/>
+    <slot_descriptor byteOffset="12" byte_size="4" id="12" name="d_year"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="24" tbl="tpcds_parquet_3000.store_parquet" tuple_id="2">
+    <slot_descriptor byteOffset="4" byte_size="4" id="5" name="s_store_sk"/>
+    <slot_descriptor byteOffset="8" byte_size="16" id="13" name="s_county"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="32" tbl="tpcds_parquet_3000.household_demographics_parquet" tuple_id="3">
+    <slot_descriptor byteOffset="4" byte_size="4" id="7" name="hd_demo_sk"/>
+    <slot_descriptor byteOffset="16" byte_size="16" id="9" name="hd_buy_potential"/>
+    <slot_descriptor byteOffset="8" byte_size="4" id="10" name="hd_vehicle_count"/>
+    <slot_descriptor byteOffset="12" byte_size="4" id="11" name="hd_dep_count"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="24" tbl="null" tuple_id="4">
+    <slot_descriptor byteOffset="4" byte_size="4" id="14" name="null"/>
+    <slot_descriptor byteOffset="8" byte_size="4" id="15" name="null"/>
+    <slot_descriptor byteOffset="16" byte_size="8" id="16" name="null"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="0" tbl="dn" tuple_id="5">
+    <slot_descriptor byteOffset="-1" byte_size="0" id="17" name="ss_ticket_number"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="18" name="ss_customer_sk"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="19" name="cnt"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="72" tbl="tpcds_parquet_3000.customer_parquet" tuple_id="6">
+    <slot_descriptor byteOffset="8" byte_size="16" id="20" name="c_last_name"/>
+    <slot_descriptor byteOffset="24" byte_size="16" id="21" name="c_first_name"/>
+    <slot_descriptor byteOffset="40" byte_size="16" id="22" name="c_salutation"/>
+    <slot_descriptor byteOffset="56" byte_size="16" id="23" name="c_preferred_cust_flag"/>
+    <slot_descriptor byteOffset="4" byte_size="4" id="24" name="c_customer_sk"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="80" tbl="null" tuple_id="7">
+    <slot_descriptor byteOffset="4" byte_size="4" id="25" name="ss_ticket_number"/>
+    <slot_descriptor byteOffset="8" byte_size="8" id="26" name="cnt"/>
+    <slot_descriptor byteOffset="16" byte_size="16" id="27" name="c_first_name"/>
+    <slot_descriptor byteOffset="32" byte_size="16" id="28" name="c_last_name"/>
+    <slot_descriptor byteOffset="48" byte_size="16" id="29" name="c_preferred_cust_flag"/>
+    <slot_descriptor byteOffset="64" byte_size="16" id="30" name="c_salutation"/>
+  </tuple_descriptor>
+</tuple_descriptors>

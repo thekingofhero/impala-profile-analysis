@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tuple_descriptors>
+  <tuple_descriptor byte_size="64" tbl="tpcds_parquet_3000.item_parquet" tuple_id="0">
+    <slot_descriptor byteOffset="4" byte_size="4" id="0" name="i_manufact_id"/>
+    <slot_descriptor byteOffset="8" byte_size="4" id="3" name="i_item_sk"/>
+    <slot_descriptor byteOffset="16" byte_size="16" id="9" name="i_category"/>
+    <slot_descriptor byteOffset="32" byte_size="16" id="10" name="i_class"/>
+    <slot_descriptor byteOffset="48" byte_size="16" id="11" name="i_brand"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="24" tbl="tpcds_parquet_3000.store_sales_parquet" tuple_id="1">
+    <slot_descriptor byteOffset="16" byte_size="8" id="1" name="ss_sales_price"/>
+    <slot_descriptor byteOffset="4" byte_size="4" id="2" name="ss_item_sk"/>
+    <slot_descriptor byteOffset="8" byte_size="4" id="4" name="ss_sold_date_sk"/>
+    <slot_descriptor byteOffset="12" byte_size="4" id="6" name="ss_store_sk"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="16" tbl="tpcds_parquet_3000.date_dim_parquet" tuple_id="2">
+    <slot_descriptor byteOffset="4" byte_size="4" id="5" name="d_date_sk"/>
+    <slot_descriptor byteOffset="8" byte_size="4" id="8" name="d_month_seq"/>
+    <slot_descriptor byteOffset="12" byte_size="4" id="12" name="d_qoy"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="8" tbl="tpcds_parquet_3000.store_parquet" tuple_id="3">
+    <slot_descriptor byteOffset="4" byte_size="4" id="7" name="s_store_sk"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="24" tbl="null" tuple_id="4">
+    <slot_descriptor byteOffset="4" byte_size="4" id="13" name="null"/>
+    <slot_descriptor byteOffset="8" byte_size="4" id="14" name="null"/>
+    <slot_descriptor byteOffset="16" byte_size="8" id="15" name="null"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="0" tbl="tmp1" tuple_id="5">
+    <slot_descriptor byteOffset="-1" byte_size="0" id="16" name="i_manufact_id"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="17" name="sum_sales"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="16" tbl="null" tuple_id="6">
+    <slot_descriptor byteOffset="8" byte_size="8" id="18" name="sum_sales"/>
+    <slot_descriptor byteOffset="4" byte_size="4" id="19" name="i_manufact_id"/>
+  </tuple_descriptor>
+</tuple_descriptors>

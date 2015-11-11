@@ -6,6 +6,8 @@ from log_analysis.getStructInfo import StructInfo
 from log_analysis.getDetailInfo import DetailInfo
 from log_analysis.getInstanceInfo import InstanceInfo
 from config import local_config
+from statistics_info.data_dist import server_idx_map
+server_idx_map = local_config()['server_idx_map']
 import re
 
 class class_log:
@@ -67,8 +69,9 @@ class class_log:
                         for plnode in ins_dic[instance]:
                             if fg.getHasHBASENODE():
                                 if re.search('HBASE_SCAN_NODE',plnode.getAttri()['n_key']):
-                                    fp.write('%s,%s,%s,%s,%s,%s,%s\n'%(fg.getAttri()['fid'],
+                                    fp.write('%s,%s,%s,%s,%s,%s,%s,%s\n'%(fg.getAttri()['fid'],
                                                                          instance.getAttri()['host'],
+                                                                         server_idx_map[instance.getAttri()['host']] if instance.getAttri()['host'] in server_idx_map.keys() else 0,
                                                                          plnode.getAttri()['nid'],
                                                                          plnode.getAttri()['RowsRead'],
                                                                          plnode.getAttri()['RowsReturned'],

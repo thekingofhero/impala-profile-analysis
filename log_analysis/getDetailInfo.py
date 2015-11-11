@@ -32,7 +32,7 @@ class DetailInfo:
 #         des = map(None ,r_keys,nodes)
 #         return des
     def getNodes(self,fragment):
-        r = "\n\s+EXCHANGE_NODE|SORT_NODE|AGGREGATION_NODE|HASH_JOIN_NODE|HDFS_SCAN_NODE|HBASE_SCAN_NODE"
+        r = "\n\s+EXCHANGE_NODE|SORT_NODE|AGGREGATION_NODE|HASH_JOIN_NODE|HDFS_SCAN_NODE|HBASE_SCAN_NODE|SELECT_NODE|ANALYTIC_EVAL_NODE"
         r_keys = re.findall(r,fragment)
         nn = re.split(r, fragment)
         fragment_info = nn[0]

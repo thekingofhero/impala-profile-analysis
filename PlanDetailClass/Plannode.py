@@ -21,6 +21,7 @@ class Plannode:
             nid = re.search('\(id=\d+\)',line) 
             if nid is not None and 'nid' not in self.attri.keys():
                 self.attri['nid'] = str(int(nid.group(0).split('=')[1][:-1]))
+            
             for item in self.node_case.keys():
                 #两个IF的顺序不能反，先匹配带()的，再匹配无括号的。原因是re.match并不是完全匹配，只是从字符串的开头匹配，然后返回第一次出现
                 ## - RowsReturned: 20.20K (20201)
@@ -37,6 +38,7 @@ class Plannode:
                         temp = str(int(line.split(':')[1]) * self.num_ins)
                         child_node = self.obj_node.createNode(self.node_case[item],text=temp)
                         self.attri['items'].append(child_node)
+
     def getAttri(self):
         
                 

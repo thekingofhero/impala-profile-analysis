@@ -1,0 +1,128 @@
+<?xml version="1.0" ?>
+<tuple_descriptors>
+  <tuple_descriptor byte_size="24" tbl="tpcds_parquet_3000.store_sales_parquet" tuple_id="0">
+    <slot_descriptor byteOffset="4" byte_size="4" id="1" name="ss_store_sk"/>
+    <slot_descriptor byteOffset="16" byte_size="8" id="3" name="ss_sales_price"/>
+    <slot_descriptor byteOffset="8" byte_size="4" id="5" name="ss_sold_date_sk"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="32" tbl="tpcds_parquet_3000.date_dim_parquet" tuple_id="1">
+    <slot_descriptor byteOffset="4" byte_size="4" id="0" name="d_week_seq"/>
+    <slot_descriptor byteOffset="16" byte_size="16" id="2" name="d_day_name"/>
+    <slot_descriptor byteOffset="8" byte_size="4" id="4" name="d_date_sk"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="72" tbl="null" tuple_id="2">
+    <slot_descriptor byteOffset="4" byte_size="4" id="6" name="null"/>
+    <slot_descriptor byteOffset="8" byte_size="4" id="7" name="null"/>
+    <slot_descriptor byteOffset="16" byte_size="8" id="8" name="null"/>
+    <slot_descriptor byteOffset="24" byte_size="8" id="9" name="null"/>
+    <slot_descriptor byteOffset="32" byte_size="8" id="10" name="null"/>
+    <slot_descriptor byteOffset="40" byte_size="8" id="11" name="null"/>
+    <slot_descriptor byteOffset="48" byte_size="8" id="12" name="null"/>
+    <slot_descriptor byteOffset="56" byte_size="8" id="13" name="null"/>
+    <slot_descriptor byteOffset="64" byte_size="8" id="14" name="null"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="0" tbl="wss" tuple_id="3">
+    <slot_descriptor byteOffset="-1" byte_size="0" id="15" name="d_week_seq"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="16" name="ss_store_sk"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="17" name="sun_sales"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="18" name="mon_sales"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="19" name="tue_sales"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="20" name="wed_sales"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="21" name="thu_sales"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="22" name="fri_sales"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="23" name="sat_sales"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="40" tbl="tpcds_parquet_3000.store_parquet" tuple_id="4">
+    <slot_descriptor byteOffset="8" byte_size="16" id="24" name="s_store_name"/>
+    <slot_descriptor byteOffset="24" byte_size="16" id="25" name="s_store_id"/>
+    <slot_descriptor byteOffset="4" byte_size="4" id="27" name="s_store_sk"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="12" tbl="tpcds_parquet_3000.date_dim_parquet" tuple_id="5">
+    <slot_descriptor byteOffset="4" byte_size="4" id="26" name="d_week_seq"/>
+    <slot_descriptor byteOffset="8" byte_size="4" id="28" name="d_month_seq"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="0" tbl="y" tuple_id="6">
+    <slot_descriptor byteOffset="-1" byte_size="0" id="29" name="s_store_name1"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="30" name="d_week_seq1"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="31" name="s_store_id1"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="32" name="sun_sales1"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="33" name="mon_sales1"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="34" name="tue_sales1"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="35" name="wed_sales1"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="36" name="thu_sales1"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="37" name="fri_sales1"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="38" name="sat_sales1"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="24" tbl="tpcds_parquet_3000.store_sales_parquet" tuple_id="7">
+    <slot_descriptor byteOffset="4" byte_size="4" id="40" name="ss_store_sk"/>
+    <slot_descriptor byteOffset="16" byte_size="8" id="42" name="ss_sales_price"/>
+    <slot_descriptor byteOffset="8" byte_size="4" id="44" name="ss_sold_date_sk"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="32" tbl="tpcds_parquet_3000.date_dim_parquet" tuple_id="8">
+    <slot_descriptor byteOffset="4" byte_size="4" id="39" name="d_week_seq"/>
+    <slot_descriptor byteOffset="16" byte_size="16" id="41" name="d_day_name"/>
+    <slot_descriptor byteOffset="8" byte_size="4" id="43" name="d_date_sk"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="72" tbl="null" tuple_id="9">
+    <slot_descriptor byteOffset="4" byte_size="4" id="45" name="null"/>
+    <slot_descriptor byteOffset="8" byte_size="4" id="46" name="null"/>
+    <slot_descriptor byteOffset="16" byte_size="8" id="47" name="null"/>
+    <slot_descriptor byteOffset="24" byte_size="8" id="48" name="null"/>
+    <slot_descriptor byteOffset="32" byte_size="8" id="49" name="null"/>
+    <slot_descriptor byteOffset="40" byte_size="8" id="50" name="null"/>
+    <slot_descriptor byteOffset="48" byte_size="8" id="51" name="null"/>
+    <slot_descriptor byteOffset="56" byte_size="8" id="52" name="null"/>
+    <slot_descriptor byteOffset="64" byte_size="8" id="53" name="null"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="0" tbl="wss" tuple_id="10">
+    <slot_descriptor byteOffset="-1" byte_size="0" id="54" name="d_week_seq"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="55" name="ss_store_sk"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="56" name="sun_sales"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="57" name="mon_sales"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="58" name="tue_sales"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="59" name="wed_sales"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="60" name="thu_sales"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="61" name="fri_sales"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="62" name="sat_sales"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="24" tbl="tpcds_parquet_3000.store_parquet" tuple_id="11">
+    <slot_descriptor byteOffset="-1" byte_size="0" id="63" name="s_store_name"/>
+    <slot_descriptor byteOffset="8" byte_size="16" id="64" name="s_store_id"/>
+    <slot_descriptor byteOffset="4" byte_size="4" id="66" name="s_store_sk"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="12" tbl="tpcds_parquet_3000.date_dim_parquet" tuple_id="12">
+    <slot_descriptor byteOffset="4" byte_size="4" id="65" name="d_week_seq"/>
+    <slot_descriptor byteOffset="8" byte_size="4" id="67" name="d_month_seq"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="0" tbl="x" tuple_id="13">
+    <slot_descriptor byteOffset="-1" byte_size="0" id="68" name="s_store_name2"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="69" name="d_week_seq2"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="70" name="s_store_id2"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="71" name="sun_sales2"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="72" name="mon_sales2"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="73" name="tue_sales2"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="74" name="wed_sales2"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="75" name="thu_sales2"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="76" name="fri_sales2"/>
+    <slot_descriptor byteOffset="-1" byte_size="0" id="77" name="sat_sales2"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="152" tbl="null" tuple_id="14">
+    <slot_descriptor byteOffset="8" byte_size="8" id="78" name="tue_sales1"/>
+    <slot_descriptor byteOffset="16" byte_size="8" id="79" name="wed_sales1"/>
+    <slot_descriptor byteOffset="24" byte_size="8" id="80" name="sun_sales1"/>
+    <slot_descriptor byteOffset="32" byte_size="8" id="81" name="sun_sales2"/>
+    <slot_descriptor byteOffset="40" byte_size="8" id="82" name="mon_sales1"/>
+    <slot_descriptor byteOffset="48" byte_size="8" id="83" name="sat_sales1"/>
+    <slot_descriptor byteOffset="56" byte_size="8" id="84" name="thu_sales1"/>
+    <slot_descriptor byteOffset="64" byte_size="8" id="85" name="fri_sales1"/>
+    <slot_descriptor byteOffset="72" byte_size="8" id="86" name="fri_sales2"/>
+    <slot_descriptor byteOffset="80" byte_size="8" id="87" name="sat_sales2"/>
+    <slot_descriptor byteOffset="88" byte_size="8" id="88" name="mon_sales2"/>
+    <slot_descriptor byteOffset="96" byte_size="8" id="89" name="tue_sales2"/>
+    <slot_descriptor byteOffset="104" byte_size="8" id="90" name="wed_sales2"/>
+    <slot_descriptor byteOffset="112" byte_size="8" id="91" name="thu_sales2"/>
+    <slot_descriptor byteOffset="120" byte_size="16" id="92" name="s_store_name1"/>
+    <slot_descriptor byteOffset="136" byte_size="16" id="93" name="s_store_id1"/>
+    <slot_descriptor byteOffset="4" byte_size="4" id="94" name="d_week_seq1"/>
+  </tuple_descriptor>
+</tuple_descriptors>

@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tuple_descriptors>
+  <tuple_descriptor byte_size="24" tbl="tpcds_parquet_3000.store_sales_parquet" tuple_id="0">
+    <slot_descriptor byteOffset="16" byte_size="8" id="4" name="ss_ext_sales_price"/>
+    <slot_descriptor byteOffset="4" byte_size="4" id="5" name="ss_item_sk"/>
+    <slot_descriptor byteOffset="8" byte_size="4" id="7" name="ss_sold_date_sk"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="80" tbl="tpcds_parquet_3000.item_parquet" tuple_id="1">
+    <slot_descriptor byteOffset="16" byte_size="16" id="0" name="i_item_desc"/>
+    <slot_descriptor byteOffset="32" byte_size="16" id="1" name="i_category"/>
+    <slot_descriptor byteOffset="48" byte_size="16" id="2" name="i_class"/>
+    <slot_descriptor byteOffset="8" byte_size="8" id="3" name="i_current_price"/>
+    <slot_descriptor byteOffset="4" byte_size="4" id="6" name="i_item_sk"/>
+    <slot_descriptor byteOffset="64" byte_size="16" id="10" name="i_item_id"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="24" tbl="tpcds_parquet_3000.date_dim_parquet" tuple_id="2">
+    <slot_descriptor byteOffset="4" byte_size="4" id="8" name="d_date_sk"/>
+    <slot_descriptor byteOffset="8" byte_size="16" id="9" name="d_date"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="88" tbl="null" tuple_id="3">
+    <slot_descriptor byteOffset="24" byte_size="16" id="11" name="null"/>
+    <slot_descriptor byteOffset="40" byte_size="16" id="12" name="null"/>
+    <slot_descriptor byteOffset="56" byte_size="16" id="13" name="null"/>
+    <slot_descriptor byteOffset="72" byte_size="16" id="14" name="null"/>
+    <slot_descriptor byteOffset="8" byte_size="8" id="15" name="null"/>
+    <slot_descriptor byteOffset="16" byte_size="8" id="16" name="null"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="88" tbl="null" tuple_id="4">
+    <slot_descriptor byteOffset="8" byte_size="8" id="17" name="null"/>
+    <slot_descriptor byteOffset="24" byte_size="16" id="18" name="null"/>
+    <slot_descriptor byteOffset="40" byte_size="16" id="19" name="null"/>
+    <slot_descriptor byteOffset="56" byte_size="16" id="20" name="null"/>
+    <slot_descriptor byteOffset="72" byte_size="16" id="21" name="null"/>
+    <slot_descriptor byteOffset="16" byte_size="8" id="22" name="null"/>
+  </tuple_descriptor>
+</tuple_descriptors>

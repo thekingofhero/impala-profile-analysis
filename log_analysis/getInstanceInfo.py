@@ -32,7 +32,7 @@ class InstanceInfo:
 #         des = map(None ,r_keys,nodes)
 #         return des
     def getInstances(self,fragment):
-        r = "instance"
+        r = "Instance"
         ii = re.split(r,fragment)
         return ii
     

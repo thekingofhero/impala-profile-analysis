@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<execution_plan query="ss_max.sql">
+	<plan_fragment fid="2" is_root="true">
+		<plan_node children="5" display_name="AGGREGATE" is_plan_root="true" nid="6" row-size="60" tuple-ids="2">
+			<rows_returned>1</rows_returned>
+		</plan_node>
+		<plan_node children="" display_name="EXCHANGE" dist_mode="PARTITIONED" is_plan_root="false" nid="5" partition_type="UNPARTITIONED" row-size="60" tuple-ids="2">
+			<rows_returned>4</rows_returned>
+		</plan_node>
+	</plan_fragment>
+	<plan_fragment fid="1" is_root="false">
+		<data_stream_sink dist_mode="PARTITIONED" fid="2" nid="5" partition_type="UNPARTITIONED"/>
+		<plan_node children="4" display_name="AGGREGATE" is_plan_root="true" nid="2" row-size="60" tuple-ids="2">
+			<rows_returned>4</rows_returned>
+		</plan_node>
+		<plan_node children="3" display_name="AGGREGATE" is_plan_root="false" nid="4" row-size="56" tuple-ids="1">
+			<rows_returned>1820</rows_returned>
+		</plan_node>
+		<plan_node children="" display_name="EXCHANGE" dist_mode="PARTITIONED" is_plan_root="false" nid="3" partition_type="HASH" row-size="56" tuple-ids="1">
+			<rows_returned>1820</rows_returned>
+		</plan_node>
+	</plan_fragment>
+	<plan_fragment fid="0" is_root="false">
+		<data_stream_sink dist_mode="PARTITIONED" fid="1" nid="3" partition_type="HASH"/>
+		<plan_node children="0" display_name="AGGREGATE" is_plan_root="true" nid="1" row-size="56" tuple-ids="1">
+			<rows_returned>1820</rows_returned>
+		</plan_node>
+		<plan_node children="" database_name="tpcds_parquet_3000" display_name="SCAN HDFS" is_plan_root="false" nid="0" partitions="1823/1823" row-size="36" table="store_sales_parquet" tuple-ids="0">
+			<rows_read>8251124388</rows_read>
+			<rows_returned>8251124388</rows_returned>
+		</plan_node>
+	</plan_fragment>
+</execution_plan>

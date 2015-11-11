@@ -127,6 +127,10 @@ class Plannode:
             dist_mode = "BROADCAST"
             partition_type = None
             self.attri_dic['dist_mode'] = dist_mode
+        elif re.compile('\w*PARTITIONED\w*').match(dist_type):
+            dist_mode = "PARTITIONED"
+            partition_type = None
+            self.attri_dic['dist_mode'] = dist_mode
         else:
             self.logging.error('no dist type:%s'%(dist_type))
     

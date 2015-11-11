@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tuple_descriptors>
+  <tuple_descriptor byte_size="48" tbl="tpcds_parquet_3000.store_sales_parquet" tuple_id="0">
+    <slot_descriptor byteOffset="4" byte_size="4" id="1" name="ss_quantity"/>
+    <slot_descriptor byteOffset="24" byte_size="8" id="2" name="ss_list_price"/>
+    <slot_descriptor byteOffset="32" byte_size="8" id="3" name="ss_coupon_amt"/>
+    <slot_descriptor byteOffset="40" byte_size="8" id="4" name="ss_sales_price"/>
+    <slot_descriptor byteOffset="8" byte_size="4" id="5" name="ss_sold_date_sk"/>
+    <slot_descriptor byteOffset="12" byte_size="4" id="7" name="ss_item_sk"/>
+    <slot_descriptor byteOffset="16" byte_size="4" id="9" name="ss_cdemo_sk"/>
+    <slot_descriptor byteOffset="20" byte_size="4" id="11" name="ss_promo_sk"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="56" tbl="tpcds_parquet_3000.customer_demographics_parquet" tuple_id="1">
+    <slot_descriptor byteOffset="4" byte_size="4" id="10" name="cd_demo_sk"/>
+    <slot_descriptor byteOffset="8" byte_size="16" id="13" name="cd_gender"/>
+    <slot_descriptor byteOffset="24" byte_size="16" id="14" name="cd_marital_status"/>
+    <slot_descriptor byteOffset="40" byte_size="16" id="15" name="cd_education_status"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="12" tbl="tpcds_parquet_3000.date_dim_parquet" tuple_id="2">
+    <slot_descriptor byteOffset="4" byte_size="4" id="6" name="d_date_sk"/>
+    <slot_descriptor byteOffset="8" byte_size="4" id="18" name="d_year"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="24" tbl="tpcds_parquet_3000.item_parquet" tuple_id="3">
+    <slot_descriptor byteOffset="8" byte_size="16" id="0" name="i_item_id"/>
+    <slot_descriptor byteOffset="4" byte_size="4" id="8" name="i_item_sk"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="40" tbl="tpcds_parquet_3000.promotion_parquet" tuple_id="4">
+    <slot_descriptor byteOffset="4" byte_size="4" id="12" name="p_promo_sk"/>
+    <slot_descriptor byteOffset="8" byte_size="16" id="16" name="p_channel_email"/>
+    <slot_descriptor byteOffset="24" byte_size="16" id="17" name="p_channel_event"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="88" tbl="null" tuple_id="5">
+    <slot_descriptor byteOffset="8" byte_size="16" id="19" name="null"/>
+    <slot_descriptor byteOffset="24" byte_size="16" id="20" name="null"/>
+    <slot_descriptor byteOffset="40" byte_size="16" id="21" name="null"/>
+    <slot_descriptor byteOffset="56" byte_size="16" id="22" name="null"/>
+    <slot_descriptor byteOffset="72" byte_size="16" id="23" name="null"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="56" tbl="null" tuple_id="6">
+    <slot_descriptor byteOffset="40" byte_size="16" id="24" name="null"/>
+    <slot_descriptor byteOffset="8" byte_size="8" id="25" name="null"/>
+    <slot_descriptor byteOffset="16" byte_size="8" id="26" name="null"/>
+    <slot_descriptor byteOffset="24" byte_size="8" id="27" name="null"/>
+    <slot_descriptor byteOffset="32" byte_size="8" id="28" name="null"/>
+  </tuple_descriptor>
+  <tuple_descriptor byte_size="56" tbl="null" tuple_id="7">
+    <slot_descriptor byteOffset="8" byte_size="8" id="29" name="null"/>
+    <slot_descriptor byteOffset="40" byte_size="16" id="30" name="null"/>
+    <slot_descriptor byteOffset="16" byte_size="8" id="31" name="null"/>
+    <slot_descriptor byteOffset="24" byte_size="8" id="32" name="null"/>
+    <slot_descriptor byteOffset="32" byte_size="8" id="33" name="null"/>
+  </tuple_descriptor>
+</tuple_descriptors>
