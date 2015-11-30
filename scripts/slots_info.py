@@ -5,7 +5,7 @@ from xml.etree.ElementTree import Element, SubElement, Comment, tostring
 from xml.etree import ElementTree
 from xml.dom import minidom
 
-coordinator_log_name = 'impalad.tracing024'
+coordinator_log_name = 'impalad.hehe024'
 
 def get_profiles(input_path="."):
 

@@ -169,7 +169,7 @@ if __name__ == '__main__':
 
 	# un-comment the following two lins if you want to run the script through an IDE/Python Editor
 	# profile = os.path.join('.', 'q98.sql_1427955243', 'profiles', 'q98.sql.log')
-	profile = r'C:\Users\junliu2\Syncplicity\Benchmarks\1G_2.7G_PARQUET_50\q52.sql.log'
+	profile = r'C:\Users\heheda2\Syncplicity\Benchmarks\1G_2.7G_PARQUET_50\q52.sql.log'
 	output = r'C:\Development\logs\metrics\exchange'
 	sys.argv = ['exchange.py', profile]
 

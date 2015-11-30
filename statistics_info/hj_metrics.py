@@ -218,7 +218,7 @@ if __name__ == '__main__':
 	print(platform.python_version())
 
 	query_name = 'q27.sql.log'
-	profile = os.path.join(r'C:\Users\junliu2\Syncplicity\Benchmarks\executions\1G_2.7G_PARQUET_3000\parquet', query_name)
+	profile = os.path.join(r'C:\Users\heheda2\Syncplicity\Benchmarks\executions\1G_2.7G_PARQUET_3000\parquet', query_name)
 	output = r'C:\Development\logs\metrics\hash-join'
 	sys.argv = ['hj_metrics.py', profile]
 

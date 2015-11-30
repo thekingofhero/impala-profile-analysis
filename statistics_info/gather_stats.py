@@ -39,7 +39,7 @@ if __name__ == '__main__':
 	# print('Python Version {0}'.format(platform.python_version()))
 
 	query_name = 'ss_max.sql.log'
-	profile = os.path.join(r'C:\Users\junliu2\Syncplicity\Benchmarks\1G_2.7G_PARQUET_50\plan', query_name)
+	profile = os.path.join(r'C:\Users\heheda2\Syncplicity\Benchmarks\1G_2.7G_PARQUET_50\plan', query_name)
 	output = os.path.join(r'C:\Development\logs\metrics\gather-stats', query_name)
 	sys.argv = ['gather-stats.py', profile]
 

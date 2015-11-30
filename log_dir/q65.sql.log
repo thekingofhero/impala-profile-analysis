@@ -1,5 +1,5 @@
 Starting Impala Shell without Kerberos authentication
-Connected to tracing024:21000
+Connected to hehe024:21000
 Server version: impalad version 2.0.0-cdh5 RELEASE (build ecf30af0b4d6e56ea80297df2189367ada6b7da7)
 Query: use `tpcds_parquet_snappy_50`
 Query: with wss as
@@ -283,7 +283,7 @@ order by
   s_store_id1,
   d_week_seq1
 limit 100
-    Coordinator: tracing024:22000
+    Coordinator: hehe024:22000
     Plan: 
 ----------------
 Estimated Per-Host Requirements: Memory=88.57MB VCores=3
@@ -532,7 +532,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
      - RowMaterializationTimer: 633.595us
   Execution Profile 844131c50ba1d35:5f9d413ccb84d396:(Total: 11s626ms, non-child: 0ns, % non-child: 0.00%)
     Fragment start latencies:  count: 26, last: 0.013602, min: 0.0094091, max: 0.209758, mean: 0.139316, stddev: 0.0681418
-    Per Node Peak Memory Usage: tracing025:22000(100.15 MB) tracing026:22000(97.30 MB) tracing027:22000(97.69 MB) tracing024:22000(98.57 MB) 
+    Per Node Peak Memory Usage: hehe025:22000(100.15 MB) hehe026:22000(97.30 MB) hehe027:22000(97.69 MB) hehe024:22000(98.57 MB) 
      - FinalizationTimer: 0ns
     Coordinator Fragment F11:(Total: 10s568ms, non-child: 7.511ms, % non-child: 0.07%)
       MemoryUsage(500.0ms): 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 91.19 KB, 103.19 KB
@@ -1369,7 +1369,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
          - TotalRawHdfsReadTime(*): 679.364us
          - TotalReadThroughput: 0.00 /sec
     Fragment F10:
-      Instance 844131c50ba1d35:5f9d413ccb84d399 (host=tracing024:22000):(Total: 11s324ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 844131c50ba1d35:5f9d413ccb84d399 (host=hehe024:22000):(Total: 11s324ms, non-child: 0ns, % non-child: 0.00%)
         MemoryUsage(500.0ms): 0, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB
         ThreadUsage(500.0ms): 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
          - AverageThreadTokens: 1.96 
@@ -1441,7 +1441,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - RowsReturnedRate: 596.00 /sec
            - SendersBlockedTimer: 0ns
            - SendersBlockedTotalTimer(*): 0ns
-      Instance 844131c50ba1d35:5f9d413ccb84d398 (host=tracing027:22000):(Total: 11s320ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 844131c50ba1d35:5f9d413ccb84d398 (host=hehe027:22000):(Total: 11s320ms, non-child: 0ns, % non-child: 0.00%)
         MemoryUsage(500.0ms): 0, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 4.17 MB
         ThreadUsage(500.0ms): 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1
          - AverageThreadTokens: 1.92 
@@ -1526,7 +1526,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - RowsReturnedRate: 583.00 /sec
            - SendersBlockedTimer: 0ns
            - SendersBlockedTotalTimer(*): 0ns
-      Instance 844131c50ba1d35:5f9d413ccb84d39a (host=tracing026:22000):(Total: 11s317ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 844131c50ba1d35:5f9d413ccb84d39a (host=hehe026:22000):(Total: 11s317ms, non-child: 0ns, % non-child: 0.00%)
         MemoryUsage(500.0ms): 0, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 4.42 MB
         ThreadUsage(500.0ms): 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1
          - AverageThreadTokens: 1.92 
@@ -1611,7 +1611,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - RowsReturnedRate: 594.00 /sec
            - SendersBlockedTimer: 0ns
            - SendersBlockedTotalTimer(*): 0ns
-      Instance 844131c50ba1d35:5f9d413ccb84d39b (host=tracing025:22000):(Total: 11s315ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 844131c50ba1d35:5f9d413ccb84d39b (host=hehe025:22000):(Total: 11s315ms, non-child: 0ns, % non-child: 0.00%)
         MemoryUsage(500.0ms): 0, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 40.00 KB, 4.77 MB
         ThreadUsage(500.0ms): 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1
          - AverageThreadTokens: 1.92 
@@ -1697,7 +1697,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - SendersBlockedTimer: 0ns
            - SendersBlockedTotalTimer(*): 0ns
     Fragment F07:
-      Instance 844131c50ba1d35:5f9d413ccb84d39c (host=tracing027:22000):(Total: 10s992ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 844131c50ba1d35:5f9d413ccb84d39c (host=hehe027:22000):(Total: 10s992ms, non-child: 0ns, % non-child: 0.00%)
         MemoryUsage(500.0ms): 6.31 MB, 15.65 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.37 MB, 14.37 MB, 14.40 MB, 14.40 MB, 14.40 MB, 14.40 MB
         ThreadUsage(500.0ms): 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
          - AverageThreadTokens: 1.05 
@@ -1814,7 +1814,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - RowsReturnedRate: 1.48 K/sec
            - SendersBlockedTimer: 0ns
            - SendersBlockedTotalTimer(*): 0ns
-      Instance 844131c50ba1d35:5f9d413ccb84d39d (host=tracing024:22000):(Total: 10s989ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 844131c50ba1d35:5f9d413ccb84d39d (host=hehe024:22000):(Total: 10s989ms, non-child: 0ns, % non-child: 0.00%)
         MemoryUsage(500.0ms): 6.31 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.42 MB, 14.43 MB, 14.34 MB, 14.34 MB, 14.34 MB, 14.34 MB
         ThreadUsage(500.0ms): 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
          - AverageThreadTokens: 1.00 
@@ -1931,7 +1931,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - RowsReturnedRate: 1.54 K/sec
            - SendersBlockedTimer: 0ns
            - SendersBlockedTotalTimer(*): 0ns
-      Instance 844131c50ba1d35:5f9d413ccb84d39e (host=tracing026:22000):(Total: 10s989ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 844131c50ba1d35:5f9d413ccb84d39e (host=hehe026:22000):(Total: 10s989ms, non-child: 0ns, % non-child: 0.00%)
         MemoryUsage(500.0ms): 6.31 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.36 MB, 14.37 MB, 14.37 MB, 14.37 MB, 14.37 MB, 14.37 MB
         ThreadUsage(500.0ms): 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
          - AverageThreadTokens: 1.00 
@@ -2048,7 +2048,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - RowsReturnedRate: 1.53 K/sec
            - SendersBlockedTimer: 0ns
            - SendersBlockedTotalTimer(*): 0ns
-      Instance 844131c50ba1d35:5f9d413ccb84d39f (host=tracing025:22000):(Total: 10s986ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 844131c50ba1d35:5f9d413ccb84d39f (host=hehe025:22000):(Total: 10s986ms, non-child: 0ns, % non-child: 0.00%)
         MemoryUsage(500.0ms): 6.31 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.32 MB, 14.41 MB, 14.35 MB, 14.35 MB, 14.35 MB, 14.35 MB, 14.35 MB
         ThreadUsage(500.0ms): 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
          - AverageThreadTokens: 1.00 
@@ -2166,7 +2166,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - SendersBlockedTimer: 0ns
            - SendersBlockedTotalTimer(*): 0ns
     Fragment F09:
-      Instance 844131c50ba1d35:5f9d413ccb84d3a0 (host=tracing025:22000):(Total: 660.202ms, non-child: 1.939ms, % non-child: 0.29%)
+      Instance 844131c50ba1d35:5f9d413ccb84d3a0 (host=hehe025:22000):(Total: 660.202ms, non-child: 1.939ms, % non-child: 0.29%)
         Hdfs split stats (<volume id>:<# splits>/<split lengths>): 2:1/2.41 MB 
         MemoryUsage(500.0ms): 202.66 KB
         ThreadUsage(500.0ms): 2
@@ -2219,7 +2219,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - TotalRawHdfsReadTime(*): 9.344ms
            - TotalReadThroughput: 0.00 /sec
     Fragment F08:
-      Instance 844131c50ba1d35:5f9d413ccb84d3a1 (host=tracing026:22000):(Total: 616.401ms, non-child: 2.450ms, % non-child: 0.40%)
+      Instance 844131c50ba1d35:5f9d413ccb84d3a1 (host=hehe026:22000):(Total: 616.401ms, non-child: 2.450ms, % non-child: 0.40%)
         Hdfs split stats (<volume id>:<# splits>/<split lengths>): 1:1/18.65 KB 
         MemoryUsage(500.0ms): 93.31 KB
         ThreadUsage(500.0ms): 2
@@ -2272,7 +2272,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - TotalRawHdfsReadTime(*): 89.629us
            - TotalReadThroughput: 0.00 /sec
     Fragment F05:
-      Instance 844131c50ba1d35:5f9d413ccb84d3a4 (host=tracing026:22000):(Total: 10s730ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 844131c50ba1d35:5f9d413ccb84d3a4 (host=hehe026:22000):(Total: 10s730ms, non-child: 0ns, % non-child: 0.00%)
         Hdfs split stats (<volume id>:<# splits>/<split lengths>): 2:39/172.99 MB 1:38/181.84 MB 4:119/535.36 MB 5:119/513.47 MB 0:38/140.54 MB 3:119/495.41 MB 
         MemoryUsage(500.0ms): 0, 30.12 MB, 30.17 MB, 33.77 MB, 31.23 MB, 32.32 MB, 29.76 MB, 34.20 MB, 29.27 MB, 29.56 MB, 29.30 MB, 29.54 MB, 29.59 MB, 29.30 MB, 29.47 MB, 29.34 MB, 29.42 MB, 30.14 MB, 29.78 MB, 29.30 MB, 29.44 MB, 28.94 MB
         ThreadUsage(500.0ms): 1, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15
@@ -2378,7 +2378,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - ScannerThreadsVoluntaryContextSwitches: 67.35K (67349)
            - TotalRawHdfsReadTime(*): 11s422ms
            - TotalReadThroughput: 13.18 MB/sec
-      Instance 844131c50ba1d35:5f9d413ccb84d3a2 (host=tracing027:22000):(Total: 8s577ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 844131c50ba1d35:5f9d413ccb84d3a2 (host=hehe027:22000):(Total: 8s577ms, non-child: 0ns, % non-child: 0.00%)
         Hdfs split stats (<volume id>:<# splits>/<split lengths>): 3:89/432.47 MB 4:93/413.63 MB 1:89/412.93 MB 0:88/382.72 MB 2:89/386.34 MB 
         MemoryUsage(500.0ms): 0, 10.42 MB, 30.17 MB, 31.07 MB, 30.31 MB, 31.59 MB, 33.39 MB, 29.71 MB, 29.99 MB, 29.50 MB, 29.96 MB, 30.49 MB, 30.03 MB, 32.08 MB, 29.46 MB, 29.33 MB, 34.69 MB, 30.23 MB
         ThreadUsage(500.0ms): 1, 2, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15
@@ -2484,7 +2484,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - ScannerThreadsVoluntaryContextSwitches: 32.69K (32685)
            - TotalRawHdfsReadTime(*): 12s735ms
            - TotalReadThroughput: 15.83 MB/sec
-      Instance 844131c50ba1d35:5f9d413ccb84d3a3 (host=tracing024:22000):(Total: 8s298ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 844131c50ba1d35:5f9d413ccb84d3a3 (host=hehe024:22000):(Total: 8s298ms, non-child: 0ns, % non-child: 0.00%)
         Hdfs split stats (<volume id>:<# splits>/<split lengths>): 0:30/137.97 MB 5:84/342.64 MB 4:85/370.33 MB 3:85/384.16 MB 2:85/408.43 MB 1:85/404.53 MB 
         MemoryUsage(500.0ms): 6.28 MB, 30.03 MB, 29.74 MB, 31.93 MB, 30.04 MB, 33.07 MB, 32.34 MB, 29.36 MB, 29.13 MB, 28.99 MB, 29.15 MB, 29.20 MB, 29.60 MB, 29.55 MB, 29.48 MB, 30.37 MB, 29.12 MB
         ThreadUsage(500.0ms): 1, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12
@@ -2590,7 +2590,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - ScannerThreadsVoluntaryContextSwitches: 42.02K (42016)
            - TotalRawHdfsReadTime(*): 6s536ms
            - TotalReadThroughput: 15.94 MB/sec
-      Instance 844131c50ba1d35:5f9d413ccb84d3a5 (host=tracing025:22000):(Total: 7s728ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 844131c50ba1d35:5f9d413ccb84d3a5 (host=hehe025:22000):(Total: 7s728ms, non-child: 0ns, % non-child: 0.00%)
         Hdfs split stats (<volume id>:<# splits>/<split lengths>): 3:91/360.59 MB 2:33/134.53 MB 1:38/141.27 MB 5:95/386.42 MB 0:95/443.56 MB 4:97/405.98 MB 
         MemoryUsage(500.0ms): 0, 30.25 MB, 29.95 MB, 30.22 MB, 35.37 MB, 30.84 MB, 33.35 MB, 29.92 MB, 31.17 MB, 29.84 MB, 29.84 MB, 30.00 MB, 29.30 MB, 30.21 MB, 29.21 MB, 29.79 MB
         ThreadUsage(500.0ms): 1, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15
@@ -2697,7 +2697,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - TotalRawHdfsReadTime(*): 14s175ms
            - TotalReadThroughput: 16.67 MB/sec
     Fragment F06:
-      Instance 844131c50ba1d35:5f9d413ccb84d3a6 (host=tracing025:22000):(Total: 406.599ms, non-child: 1.999ms, % non-child: 0.49%)
+      Instance 844131c50ba1d35:5f9d413ccb84d3a6 (host=hehe025:22000):(Total: 406.599ms, non-child: 1.999ms, % non-child: 0.49%)
         Hdfs split stats (<volume id>:<# splits>/<split lengths>): 2:1/2.41 MB 
          - AverageThreadTokens: 0.00 
          - PeakMemoryUsage: 3.42 MB (3585768)
@@ -2747,7 +2747,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - TotalRawHdfsReadTime(*): 865.487us
            - TotalReadThroughput: 0.00 /sec
     Fragment F02:
-      Instance 844131c50ba1d35:5f9d413ccb84d3a7 (host=tracing027:22000):(Total: 10s622ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 844131c50ba1d35:5f9d413ccb84d3a7 (host=hehe027:22000):(Total: 10s622ms, non-child: 0ns, % non-child: 0.00%)
         MemoryUsage(500.0ms): 6.34 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.26 MB, 14.22 MB, 14.22 MB, 14.22 MB, 14.22 MB, 14.22 MB
         ThreadUsage(500.0ms): 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
          - AverageThreadTokens: 1.00 
@@ -2864,7 +2864,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - RowsReturnedRate: 1.53 K/sec
            - SendersBlockedTimer: 0ns
            - SendersBlockedTotalTimer(*): 0ns
-      Instance 844131c50ba1d35:5f9d413ccb84d3a9 (host=tracing026:22000):(Total: 10s621ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 844131c50ba1d35:5f9d413ccb84d3a9 (host=hehe026:22000):(Total: 10s621ms, non-child: 0ns, % non-child: 0.00%)
         MemoryUsage(500.0ms): 6.34 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.25 MB, 14.25 MB, 14.25 MB, 14.25 MB, 14.25 MB, 14.25 MB, 13.09 MB
         ThreadUsage(500.0ms): 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
          - AverageThreadTokens: 1.00 
@@ -2981,7 +2981,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - RowsReturnedRate: 1.59 K/sec
            - SendersBlockedTimer: 0ns
            - SendersBlockedTotalTimer(*): 0ns
-      Instance 844131c50ba1d35:5f9d413ccb84d3a8 (host=tracing024:22000):(Total: 10s615ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 844131c50ba1d35:5f9d413ccb84d3a8 (host=hehe024:22000):(Total: 10s615ms, non-child: 0ns, % non-child: 0.00%)
         MemoryUsage(500.0ms): 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.22 MB, 14.23 MB, 14.21 MB, 14.21 MB, 14.21 MB, 14.21 MB
         ThreadUsage(500.0ms): 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
          - AverageThreadTokens: 1.00 
@@ -3098,7 +3098,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - RowsReturnedRate: 1.60 K/sec
            - SendersBlockedTimer: 0ns
            - SendersBlockedTotalTimer(*): 0ns
-      Instance 844131c50ba1d35:5f9d413ccb84d3aa (host=tracing025:22000):(Total: 10s613ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 844131c50ba1d35:5f9d413ccb84d3aa (host=hehe025:22000):(Total: 10s613ms, non-child: 0ns, % non-child: 0.00%)
         MemoryUsage(500.0ms): 6.34 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.20 MB, 14.30 MB, 14.30 MB, 14.22 MB, 14.22 MB, 14.22 MB, 14.22 MB, 11.38 MB
         ThreadUsage(500.0ms): 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
          - AverageThreadTokens: 1.00 
@@ -3216,7 +3216,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - SendersBlockedTimer: 0ns
            - SendersBlockedTotalTimer(*): 0ns
     Fragment F04:
-      Instance 844131c50ba1d35:5f9d413ccb84d3ab (host=tracing025:22000):(Total: 200.301ms, non-child: 2.66ms, % non-child: 1.03%)
+      Instance 844131c50ba1d35:5f9d413ccb84d3ab (host=hehe025:22000):(Total: 200.301ms, non-child: 2.66ms, % non-child: 1.03%)
         Hdfs split stats (<volume id>:<# splits>/<split lengths>): 2:1/2.41 MB 
          - AverageThreadTokens: 0.00 
          - PeakMemoryUsage: 413.50 KB (423424)
@@ -3266,7 +3266,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - TotalRawHdfsReadTime(*): 15.322ms
            - TotalReadThroughput: 0.00 /sec
     Fragment F03:
-      Instance 844131c50ba1d35:5f9d413ccb84d3ac (host=tracing026:22000):(Total: 190.663ms, non-child: 2.565ms, % non-child: 1.35%)
+      Instance 844131c50ba1d35:5f9d413ccb84d3ac (host=hehe026:22000):(Total: 190.663ms, non-child: 2.565ms, % non-child: 1.35%)
         Hdfs split stats (<volume id>:<# splits>/<split lengths>): 1:1/18.65 KB 
          - AverageThreadTokens: 0.00 
          - PeakMemoryUsage: 123.00 KB (125952)
@@ -3316,7 +3316,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - TotalRawHdfsReadTime(*): 80.554us
            - TotalReadThroughput: 0.00 /sec
     Fragment F00:
-      Instance 844131c50ba1d35:5f9d413ccb84d3af (host=tracing026:22000):(Total: 10s400ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 844131c50ba1d35:5f9d413ccb84d3af (host=hehe026:22000):(Total: 10s400ms, non-child: 0ns, % non-child: 0.00%)
         Hdfs split stats (<volume id>:<# splits>/<split lengths>): 2:39/172.99 MB 1:38/181.84 MB 4:119/535.36 MB 5:119/513.47 MB 0:38/140.54 MB 3:119/495.41 MB 
         MemoryUsage(500.0ms): 9.57 MB, 29.23 MB, 29.33 MB, 29.93 MB, 30.44 MB, 29.14 MB, 29.67 MB, 29.05 MB, 29.13 MB, 29.06 MB, 29.06 MB, 29.57 MB, 29.00 MB, 29.23 MB, 28.96 MB, 28.92 MB, 29.05 MB, 29.96 MB, 28.92 MB, 28.93 MB, 33.56 MB
         ThreadUsage(500.0ms): 1, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15
@@ -3422,7 +3422,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - ScannerThreadsVoluntaryContextSwitches: 36.22K (36219)
            - TotalRawHdfsReadTime(*): 1s281ms
            - TotalReadThroughput: 12.79 MB/sec
-      Instance 844131c50ba1d35:5f9d413ccb84d3ad (host=tracing027:22000):(Total: 8s205ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 844131c50ba1d35:5f9d413ccb84d3ad (host=hehe027:22000):(Total: 8s205ms, non-child: 0ns, % non-child: 0.00%)
         Hdfs split stats (<volume id>:<# splits>/<split lengths>): 3:89/432.47 MB 4:93/413.63 MB 1:89/412.93 MB 0:88/382.72 MB 2:89/386.34 MB 
         MemoryUsage(500.0ms): 6.28 MB, 29.14 MB, 29.49 MB, 29.75 MB, 30.00 MB, 32.41 MB, 30.62 MB, 33.67 MB, 29.95 MB, 29.47 MB, 29.34 MB, 29.09 MB, 30.64 MB, 29.05 MB, 28.99 MB, 29.09 MB, 29.00 MB
         ThreadUsage(500.0ms): 1, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15
@@ -3528,7 +3528,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - ScannerThreadsVoluntaryContextSwitches: 21.94K (21942)
            - TotalRawHdfsReadTime(*): 5s080ms
            - TotalReadThroughput: 15.04 MB/sec
-      Instance 844131c50ba1d35:5f9d413ccb84d3ae (host=tracing024:22000):(Total: 7s970ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 844131c50ba1d35:5f9d413ccb84d3ae (host=hehe024:22000):(Total: 7s970ms, non-child: 0ns, % non-child: 0.00%)
         Hdfs split stats (<volume id>:<# splits>/<split lengths>): 0:30/137.97 MB 5:84/342.64 MB 4:85/370.33 MB 3:85/384.16 MB 2:85/408.43 MB 1:85/404.53 MB 
         MemoryUsage(500.0ms): 9.57 MB, 29.28 MB, 33.71 MB, 29.33 MB, 34.22 MB, 32.43 MB, 30.04 MB, 29.20 MB, 32.15 MB, 29.20 MB, 29.56 MB, 29.36 MB, 29.12 MB, 33.34 MB, 29.01 MB, 28.86 MB
         ThreadUsage(500.0ms): 1, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12
@@ -3634,7 +3634,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - ScannerThreadsVoluntaryContextSwitches: 7.87K (7872)
            - TotalRawHdfsReadTime(*): 6s673ms
            - TotalReadThroughput: 16.51 MB/sec
-      Instance 844131c50ba1d35:5f9d413ccb84d3b0 (host=tracing025:22000):(Total: 7s376ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 844131c50ba1d35:5f9d413ccb84d3b0 (host=hehe025:22000):(Total: 7s376ms, non-child: 0ns, % non-child: 0.00%)
         Hdfs split stats (<volume id>:<# splits>/<split lengths>): 3:91/360.59 MB 2:33/134.53 MB 1:38/141.27 MB 5:95/386.42 MB 0:95/443.56 MB 4:97/405.98 MB 
         MemoryUsage(500.0ms): 9.57 MB, 29.58 MB, 30.43 MB, 36.04 MB, 31.43 MB, 31.13 MB, 29.37 MB, 30.07 MB, 29.42 MB, 29.47 MB, 29.79 MB, 29.79 MB, 30.80 MB, 29.16 MB, 29.06 MB
         ThreadUsage(500.0ms): 1, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15
@@ -3741,7 +3741,7 @@ Operator              #Hosts   Avg Time   Max Time    #Rows  Est. #Rows   Peak M
            - TotalRawHdfsReadTime(*): 9s196ms
            - TotalReadThroughput: 16.80 MB/sec
     Fragment F01:
-      Instance 844131c50ba1d35:5f9d413ccb84d3b1 (host=tracing025:22000):(Total: 37.823ms, non-child: 3.710ms, % non-child: 9.81%)
+      Instance 844131c50ba1d35:5f9d413ccb84d3b1 (host=hehe025:22000):(Total: 37.823ms, non-child: 3.710ms, % non-child: 9.81%)
         Hdfs split stats (<volume id>:<# splits>/<split lengths>): 2:1/2.41 MB 
          - AverageThreadTokens: 0.00 
          - PeakMemoryUsage: 3.69 MB (3872488)

@@ -5,10 +5,10 @@ import string
 import csv
 import re
 
-server_idx_map = {'tracing024':0, 
-				  'tracing025':1,
-				  'tracing026':2,
-				  'tracing027':3}
+server_idx_map = {'hehe024':0, 
+				  'hehe025':1,
+				  'hehe026':2,
+				  'hehe027':3}
 data_dist = []
 
 def collect_data_dist_info(profile_path, output_file_path, output_dir_path="."):
@@ -202,7 +202,7 @@ if __name__ == '__main__':
 	print(platform.python_version())
 
 	query_name = 'q3.sql.log'
-	profile = os.path.join(r'C:\Users\junliu2\Syncplicity\Benchmarks\executions\1G_2.7G_PARQUET_3000\parquet', query_name)
+	profile = os.path.join(r'C:\Users\heheda2\Syncplicity\Benchmarks\executions\1G_2.7G_PARQUET_3000\parquet', query_name)
 	output = r'C:\Development\logs\metrics\data-dist'
 	sys.argv = ['data_dist.py', profile]
 

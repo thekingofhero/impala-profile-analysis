@@ -32,7 +32,7 @@ Query (id=36469006893ecd33:f09cdcc50974c5a8):
     Network Address: ::ffff:172.18.0.22:46130
     Default Db: default
     Sql Statement: select sum(c_current_cdemo_sk) from customer group by c_birth_day
-    Coordinator: tracing022:22000
+    Coordinator: hehe022:22000
     Plan: 
 ----------------
 Estimated Per-Host Requirements: Memory=1.12GB VCores=2
@@ -102,7 +102,7 @@ Operator        #Hosts   Avg Time   Max Time    #Rows  Est. #Rows  Peak Mem  Est
      - RowMaterializationTimer: 57.380us
   Execution Profile 36469006893ecd33:f09cdcc50974c5a8:(Total: 4s577ms, non-child: 0ns, % non-child: 0.00%)
     Fragment start latencies: count: 6, last: 0.228610ns, min: 0.121553ns, max: 0.234741ns, mean: 0.193260ns, stddev: 0.047497ns
-    Per Node Peak Memory Usage: tracing020:22000(6.87 MB) tracing016:22000(6.87 MB) tracing022:22000(8.58 MB) 
+    Per Node Peak Memory Usage: hehe020:22000(6.87 MB) hehe016:22000(6.87 MB) hehe022:22000(8.58 MB) 
      - FinalizationTimer: 0ns
     Coordinator Fragment F02:(Total: 4s112ms, non-child: 257.929us, % non-child: 0.01%)
       MemoryUsage(500.0ms): 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB, 8.00 KB
@@ -269,7 +269,7 @@ Operator        #Hosts   Avg Time   Max Time    #Rows  Est. #Rows  Peak Mem  Est
          - TotalRawHBaseReadTime(*): 1s570ms
          - TotalReadThroughput: 1.14 MB/sec
     Fragment F01:
-      Instance 36469006893ecd33:f09cdcc50974c5aa (host=tracing022:22000):(Total: 4s439ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 36469006893ecd33:f09cdcc50974c5aa (host=hehe022:22000):(Total: 4s439ms, non-child: 0ns, % non-child: 0.00%)
         MemoryUsage(500.0ms): 3.14 MB, 3.14 MB, 3.14 MB, 3.14 MB, 3.16 MB, 3.16 MB, 3.16 MB, 3.16 MB, 3.16 MB
         ThreadUsage(500.0ms): 1, 1, 1, 1, 1, 1, 1, 1, 1
          - AverageThreadTokens: 1.00 
@@ -324,7 +324,7 @@ Operator        #Hosts   Avg Time   Max Time    #Rows  Est. #Rows  Peak Mem  Est
            - RowsReturnedRate: 4.00 /sec
            - SendersBlockedTimer: 0ns
            - SendersBlockedTotalTimer(*): 0ns
-      Instance 36469006893ecd33:f09cdcc50974c5ac (host=tracing020:22000):(Total: 4s344ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 36469006893ecd33:f09cdcc50974c5ac (host=hehe020:22000):(Total: 4s344ms, non-child: 0ns, % non-child: 0.00%)
         MemoryUsage(500.0ms): 0, 3.14 MB, 3.14 MB, 3.14 MB, 3.14 MB, 3.16 MB, 3.16 MB, 3.16 MB, 3.16 MB
         ThreadUsage(500.0ms): 1, 1, 1, 1, 1, 1, 1, 1, 1
          - AverageThreadTokens: 1.00 
@@ -392,7 +392,7 @@ Operator        #Hosts   Avg Time   Max Time    #Rows  Est. #Rows  Peak Mem  Est
            - RowsReturnedRate: 2.00 /sec
            - SendersBlockedTimer: 0ns
            - SendersBlockedTotalTimer(*): 0ns
-      Instance 36469006893ecd33:f09cdcc50974c5ab (host=tracing016:22000):(Total: 4s339ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 36469006893ecd33:f09cdcc50974c5ab (host=hehe016:22000):(Total: 4s339ms, non-child: 0ns, % non-child: 0.00%)
         MemoryUsage(500.0ms): 3.14 MB, 3.14 MB, 3.14 MB, 3.14 MB, 3.16 MB, 3.16 MB, 3.16 MB, 3.16 MB, 3.16 MB
         ThreadUsage(500.0ms): 1, 1, 1, 1, 1, 1, 1, 1, 1
          - AverageThreadTokens: 1.00 
@@ -461,7 +461,7 @@ Operator        #Hosts   Avg Time   Max Time    #Rows  Est. #Rows  Peak Mem  Est
            - SendersBlockedTimer: 0ns
            - SendersBlockedTotalTimer(*): 0ns
     Fragment F00:
-      Instance 36469006893ecd33:f09cdcc50974c5ad (host=tracing022:22000):(Total: 4s206ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 36469006893ecd33:f09cdcc50974c5ad (host=hehe022:22000):(Total: 4s206ms, non-child: 0ns, % non-child: 0.00%)
         Hdfs split stats (<volume id>:<# splits>/<split lengths>): 
         MemoryUsage(500.0ms): 3.21 MB, 3.36 MB, 3.54 MB, 3.92 MB, 3.92 MB, 3.92 MB, 4.67 MB, 4.67 MB
         ThreadUsage(500.0ms): 1, 1, 1, 1, 1, 1, 1, 1
@@ -522,7 +522,7 @@ Operator        #Hosts   Avg Time   Max Time    #Rows  Est. #Rows  Peak Mem  Est
            - ScannerThreadsVoluntaryContextSwitches: 297 (297)
            - TotalRawHBaseReadTime(*): 2s562ms
            - TotalReadThroughput: 1.82 MB/sec
-      Instance 36469006893ecd33:f09cdcc50974c5ae (host=tracing016:22000):(Total: 1s643ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 36469006893ecd33:f09cdcc50974c5ae (host=hehe016:22000):(Total: 1s643ms, non-child: 0ns, % non-child: 0.00%)
         Hdfs split stats (<volume id>:<# splits>/<split lengths>): 
         MemoryUsage(500.0ms): 0, 3.21 MB, 3.36 MB, 3.73 MB
         ThreadUsage(500.0ms): 1, 1, 1, 1
@@ -583,7 +583,7 @@ Operator        #Hosts   Avg Time   Max Time    #Rows  Est. #Rows  Peak Mem  Est
            - ScannerThreadsVoluntaryContextSwitches: 127 (127)
            - TotalRawHBaseReadTime(*): 1s102ms
            - TotalReadThroughput: 876.91 KB/sec
-      Instance 36469006893ecd33:f09cdcc50974c5af (host=tracing020:22000):(Total: 1s641ms, non-child: 0ns, % non-child: 0.00%)
+      Instance 36469006893ecd33:f09cdcc50974c5af (host=hehe020:22000):(Total: 1s641ms, non-child: 0ns, % non-child: 0.00%)
         Hdfs split stats (<volume id>:<# splits>/<split lengths>): 
         MemoryUsage(500.0ms): 3.16 MB, 3.31 MB, 3.36 MB, 3.54 MB
         ThreadUsage(500.0ms): 1, 1, 1, 1

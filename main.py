@@ -31,7 +31,7 @@ def get_tuple_task_dic():
     if os.path.isdir(local_config()['impaladlog_path']):
         for root,dirs,files in os.walk(local_config()['impaladlog_path']):
             for file in files:
-                if file.endswith('.tracing024.impaladlog'):
+                if file.endswith('.hehe024.impaladlog'):
                     query_name = file.split('.')[0]
                     if query_name not in task_dic.keys():
                         task_dic[query_name] = [os.path.join(root,file),'tuple_descriptor_'+query_name+'.xml']                    

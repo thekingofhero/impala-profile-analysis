@@ -75,7 +75,7 @@ if __name__ == '__main__':
 	print(platform.python_version())
 	
 	query_name = ''
-	profile = os.path.join(r'C:\Users\junliu2\Syncplicity\Benchmarks\1G_2.7G_TEXT_3000', query_name)
+	profile = os.path.join(r'C:\Users\heheda2\Syncplicity\Benchmarks\1G_2.7G_TEXT_3000', query_name)
 
 	sys.argv = ['data_percentage.py', profile]
 

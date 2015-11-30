@@ -181,7 +181,7 @@ if __name__ == '__main__':
 	print(platform.python_version())
 
 	query_name = 'ss_max.sql.log'
-	profile = os.path.join(r'C:\Users\junliu2\Syncplicity\Benchmarks\1G_ALL_TEXT_50\2.7gz', query_name)
+	profile = os.path.join(r'C:\Users\heheda2\Syncplicity\Benchmarks\1G_ALL_TEXT_50\2.7gz', query_name)
 	output = r'C:\Development\logs\metrics\aggregation'
 	sys.argv = ['aggr_metrics.py', profile]
 

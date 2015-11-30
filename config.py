@@ -32,13 +32,13 @@ def local_config():
                 cof_dp_file=str(line.split("=")[1].strip())
             if line.startswith("block_list"):
                 block_list.append(line.split("=")[1].strip().strip("'"))
-    server_idx_map = {'tracing024':0, 
-                  'tracing025':1,
-                  'tracing026':2,
-                  'tracing027':3,
-                  'tracing022':4,
-                  'tracing016':5,
-                  'tracing020':6}
+    server_idx_map = {'hehe024':0, 
+                  'hehe025':1,
+                  'hehe026':2,
+                  'hehe027':3,
+                  'hehe022':4,
+                  'hehe016':5,
+                  'hehe020':6}
     #no change
     #字符串两端可能出现的特殊字符
     char_list = [':',',',']','[','=']

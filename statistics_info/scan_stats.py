@@ -6,10 +6,10 @@ import csv
 
 from scripts.utility import *
 
-server_idx_map = {'tracing024':0, 
-				  'tracing025':1,
-				  'tracing026':2,
-				  'tracing027':3}
+server_idx_map = {'hehe024':0, 
+				  'hehe025':1,
+				  'hehe026':2,
+				  'hehe027':3}
 file_format = ''
 codec = ''
 
@@ -246,7 +246,7 @@ if __name__ == '__main__':
 	codec = 'NONE'
 
 	query_name = 'q27.sql.log'
-	profile = os.path.join(r'C:\Users\junliu2\Syncplicity\Benchmarks\1G_ALL_TEXT_50\2.7gz', query_name)
+	profile = os.path.join(r'C:\Users\heheda2\Syncplicity\Benchmarks\1G_ALL_TEXT_50\2.7gz', query_name)
 	output = r'C:\Development\logs\metrics\scan-stats'
 	sys.argv = ['scan_stats.py', profile]
 
