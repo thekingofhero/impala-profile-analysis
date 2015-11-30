@@ -13,10 +13,11 @@ import os
 import string
 import re
 import csv
+
+
 from scripts.utility import *
 from statistics import *
-
-def collect_statistics(profile_path, output_file_path,file_p, output_dir_path="."):
+def collect_statistics(profile_path, output_file_path, output_dir_path="."):
 
 	keys = ['id',                          # index 0
 			'BytesSent',                   # index 1
@@ -55,85 +56,80 @@ def collect_statistics(profile_path, output_file_path,file_p, output_dir_path=".
 
 	sample_set = [0.0]*4
 
-	with open(output_file_path, 'w', newline='') as csv_file:
-		csv_writer = csv.writer(csv_file, delimiter=',')
-		
-		header = []
-		for key in keys:
-			header.append(key)
-		csv_writer.writerows([header])
 
-		for line in open(profile_path):
-			stripped_line = line.strip();
+	for line in open(profile_path):
+		stripped_line = line.strip();
 
-			if stripped_line.startswith("Estimated Per-Host Requirements:"):
-				within_plan_fragment_entries = True
-			elif stripped_line.startswith("Estimated Per-Host Mem:"):
-				within_plan_fragment_entries = False							
-			elif stripped_line.startswith("Instance") and not average_fragment_metrics_skipped:
-				average_fragment_metrics_skipped = True
-			elif stripped_line.startswith("DataStreamSender (dst_id=") and average_fragment_metrics_skipped:
-				curr_id = get_exec_node_id(stripped_line)
-				record.append(curr_id)
-				within_data_stream_sender_entry = True
-			elif average_fragment_metrics_skipped and within_data_stream_sender_entry:
+		if stripped_line.startswith("Estimated Per-Host Requirements:"):
+			within_plan_fragment_entries = True
+		elif stripped_line.startswith("Estimated Per-Host Mem:"):
+			within_plan_fragment_entries = False							
+		elif stripped_line.startswith("Instance") and not average_fragment_metrics_skipped:
+			average_fragment_metrics_skipped = True
+		elif stripped_line.startswith("DataStreamSender (dst_id=") and average_fragment_metrics_skipped:
+			curr_id = get_exec_node_id(stripped_line)
+			record.append(curr_id)
+			within_data_stream_sender_entry = True
+		elif average_fragment_metrics_skipped and within_data_stream_sender_entry:
 
-				key = get_label(stripped_line)
-				
-				if key != '' and key in func_map:
-					value = func_map[key](stripped_line)
-					record.append(value)
+			key = get_label(stripped_line)
+			
+			if key != '' and key in func_map:
+				value = func_map[key](stripped_line)
+				record.append(value)
 
-					if key == 'UncompressedRowBatchSize':
-						
+				if key == 'UncompressedRowBatchSize':
+					if float(record[5]) > 0:
 						serialization_bytes_per_ns = float(record[1]) / float(record[5])
-						record.append(serialization_bytes_per_ns)
-						sample_serialization_bytes_per_ns.append(serialization_bytes_per_ns)
-						sample_set[0] += float(record[1])
-						sample_set[1] += float(record[5])
+					else:
+						serialization_bytes_per_ns = 0
+					record.append(serialization_bytes_per_ns)
+					sample_serialization_bytes_per_ns.append(serialization_bytes_per_ns)
+					sample_set[0] += float(record[1])
+					sample_set[1] += float(record[5])
 
-						if curr_id not in serialization_bytes_per_ns_per_node_map.keys():
-							serialization_bytes_per_ns_per_node_map[curr_id] = []
-						serialization_bytes_per_ns_per_node_map[curr_id].append(serialization_bytes_per_ns)
-
+					if curr_id not in serialization_bytes_per_ns_per_node_map.keys():
+						serialization_bytes_per_ns_per_node_map[curr_id] = []
+					serialization_bytes_per_ns_per_node_map[curr_id].append(serialization_bytes_per_ns)
+					
+					if float(record[1]) > 0:
 						decompression_ratio = float(record[7]) / float(record[1]) 
-						record.append(decompression_ratio)					
-						sample_decompression_ratio.append(decompression_ratio)
-						sample_set[2] += float(record[7])
-						sample_set[3] += float(record[1])
+					else:
+						decompression_ratio = 0
+					record.append(decompression_ratio)					
+					sample_decompression_ratio.append(decompression_ratio)
+					sample_set[2] += float(record[7])
+					sample_set[3] += float(record[1])
 
-						if curr_id not in decompression_ratio_per_node_map.keys():
-							decompression_ratio_per_node_map[curr_id] = []
-						decompression_ratio_per_node_map[curr_id].append(decompression_ratio)
+					if curr_id not in decompression_ratio_per_node_map.keys():
+						decompression_ratio_per_node_map[curr_id] = []
+					decompression_ratio_per_node_map[curr_id].append(decompression_ratio)
 
-						within_data_stream_sender_entry = False
-						
-						csv_writer.writerows([record])
-						record = []
-						
-			# enf if
-		# end for		
+					within_data_stream_sender_entry = False
+					
+					record = []
+					
+		# enf if
+	# end for		
 
-		geomean_serialization_bytes_per_ns = stdev(sample_serialization_bytes_per_ns)
-		geomean_decompression_ratio = stdev(sample_decompression_ratio)
+	geomean_serialization_bytes_per_ns = stdev(sample_serialization_bytes_per_ns)
+	geomean_decompression_ratio = stdev(sample_decompression_ratio)
 
-		record = [''] * 13
-		record.append(geomean_serialization_bytes_per_ns)
-		record.append(geomean_decompression_ratio)
+	record = [''] * 13
+	record.append(geomean_serialization_bytes_per_ns)
+	record.append(geomean_decompression_ratio)
 
-		csv_writer.writerows([record])
 	# end with
 	
 	agm_geomean_serialization_bytes_per_ns = agm(geomean_serialization_bytes_per_ns, stdev(sample_serialization_bytes_per_ns))
 	agm_geomean_decompression_ratio = agm(geomean_decompression_ratio, stdev(sample_decompression_ratio))
 
-	# print('<row_batch_serialization_cost_bytes_per_ns>{0}</row_batch_serialization_cost_bytes_per_ns>'.format(sample_set[0]/sample_set[1]))
-	# print('<sender_data_decompression_ratio>{0}</sender_data_decompression_ratio>'.format(sample_set[2]/sample_set[3]))
-	
-	for key in serialization_bytes_per_ns_per_node_map.keys():
-		print('ROW_BATCH_SER_COST,{0},{1}'.format(key, average(serialization_bytes_per_ns_per_node_map[key])),file = file_p)	
-	for key in decompression_ratio_per_node_map.keys():
-		print('DECOMPRESSION_RATIO,{0},{1}'.format(key, average(decompression_ratio_per_node_map[key])), file = file_p)	
+	with open(output_file_path, 'a', newline='') as csv_file:
+		csv_writer = csv.writer(csv_file, delimiter=',')	
+		for key in serialization_bytes_per_ns_per_node_map.keys():
+			csv_writer.writerow(['ROW_BATCH_SER_COST', key, '{0:.8f}'.format(average(serialization_bytes_per_ns_per_node_map[key]))])
+		for key in decompression_ratio_per_node_map.keys():
+			csv_writer.writerow(['DECOMPRESSION_RATIO', key, '{0:.8f}'.format(average(decompression_ratio_per_node_map[key]))])
 
 if __name__ == '__main__':
 

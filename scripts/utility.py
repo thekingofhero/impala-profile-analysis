@@ -296,7 +296,7 @@ def get_partition_size(stripped_line):
 	partition_size = []
 
 	lft_idx = stripped_line.find('partitions=')
-	rgt_idx = stripped_line.find(' size=')
+	rgt_idx = stripped_line.find(' files=')
 
 	if lft_idx != -1 and rgt_idx != -1:
 		partition_info = stripped_line[lft_idx+len('partitions='):rgt_idx]

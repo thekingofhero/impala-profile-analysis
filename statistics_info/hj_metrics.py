@@ -13,11 +13,11 @@ import os
 import string
 import re
 import csv
+
+
 from scripts.utility import *
 
-from statistics import *
-
-def collect_statistics(profile_path, output_file_path,file_p, output_dir_path="."):
+def collect_statistics(profile_path, output_file_path, output_dir_path="."):
 
 	keys = ['Node Id',                   # index 0
 			'Row Size (Build)',          # index 1
@@ -90,144 +90,135 @@ def collect_statistics(profile_path, output_file_path,file_p, output_dir_path=".
 	probe_rows_per_ns_hashjoin_node = {}
 	build_rows_per_ns_hashjoin_node = {}
 
-	sample_set = [0.0]*2
-
 	non_child_time = 0.0
 
-	with open(output_file_path, 'w', newline='') as csv_file:
-		csv_writer = csv.writer(csv_file, delimiter=',')
+	for line in open(profile_path):
+		stripped_line = line.strip();
 
-		header = []
-		for key in keys:
-			header.append(key)
-		csv_writer.writerows([header])
-
-		for line in open(profile_path):
-			stripped_line = line.strip();
-
-			if stripped_line.startswith("Estimated Per-Host Requirements:"):
-				within_plan_fragment_entries = True
-			elif stripped_line.startswith("Estimated Per-Host Mem:"):
-				within_plan_fragment_entries = False
-			elif stripped_line.find(":HASH JOIN") != -1 and within_plan_fragment_entries:
-				# get hash join node id
-				rgh_idx = stripped_line.find(":HASH JOIN")
-				lft_idx = 0
-				if stripped_line.startswith('0'):
-					lft_idx = 1
-				node_id = stripped_line[lft_idx:rgh_idx]
-				within_hash_join_plan_node = True
-			elif within_hash_join_plan_node and stripped_line.find("row-size") != -1:
-				if find_build_row_size:
-					find_build_row_size = False
-					find_probe_row_size = True
-
-					lft_idx = stripped_line.find("row-size=")
-					rgh_idx = stripped_line.find("B cardinality")
-					build_row_size_map[prev_id] = stripped_line[lft_idx+9:rgh_idx]
-				if find_probe_row_size:
-					find_probe_row_size = False
-
-					lft_idx = stripped_line.find("row-size=")
-					rgh_idx = stripped_line.find("B cardinality")
-					probe_row_size_map[prev_id] = stripped_line[lft_idx+9:rgh_idx]
-					prev_id = -1
-
-				prev_id = node_id
-				within_hash_join_plan_node = False
-				find_build_row_size = True
-			elif find_build_row_size and stripped_line.find("row-size") != -1:
+		if stripped_line.startswith("Estimated Per-Host Requirements:"):
+			within_plan_fragment_entries = True
+		elif stripped_line.startswith("Estimated Per-Host Mem:"):
+			within_plan_fragment_entries = False
+		elif stripped_line.find(":HASH JOIN") != -1 and within_plan_fragment_entries:
+			# get hash join node id
+			rgh_idx = stripped_line.find(":HASH JOIN")
+			lft_idx = 0
+			if stripped_line.startswith('0'):
+				lft_idx = 1
+			node_id = stripped_line[lft_idx:rgh_idx]
+			within_hash_join_plan_node = True
+		elif within_hash_join_plan_node and stripped_line.find("row-size") != -1:
+			if find_build_row_size:
 				find_build_row_size = False
 				find_probe_row_size = True
 
 				lft_idx = stripped_line.find("row-size=")
 				rgh_idx = stripped_line.find("B cardinality")
-				build_row_size_map[node_id] = stripped_line[lft_idx+9:rgh_idx]
-			elif find_probe_row_size and stripped_line.find("row-size") != -1:
+				build_row_size_map[prev_id] = stripped_line[lft_idx+9:rgh_idx]
+			if find_probe_row_size:
 				find_probe_row_size = False
+
 				lft_idx = stripped_line.find("row-size=")
 				rgh_idx = stripped_line.find("B cardinality")
-				probe_row_size_map[node_id] = stripped_line[lft_idx+9:rgh_idx]
-				node_id = -1
-			elif stripped_line.startswith("Instance") and not average_fragment_metrics_skipped:
-				average_fragment_metrics_skipped = True
-			elif stripped_line.startswith("HASH_JOIN_NODE (id=") and average_fragment_metrics_skipped:
+				probe_row_size_map[prev_id] = stripped_line[lft_idx+9:rgh_idx]
+				prev_id = -1
 
-				non_child_time = float(get_non_child_time_in_str(stripped_line))
+			prev_id = node_id
+			within_hash_join_plan_node = False
+			find_build_row_size = True
+		elif find_build_row_size and stripped_line.find("row-size") != -1:
+			find_build_row_size = False
+			find_probe_row_size = True
 
-				curr_id = get_exec_node_id(stripped_line)
-				record.append(curr_id)
-				record.append(build_row_size_map[curr_id])
-				record.append(probe_row_size_map[curr_id])
-				within_hash_join_entry = True
-			elif average_fragment_metrics_skipped and within_hash_join_entry:
+			lft_idx = stripped_line.find("row-size=")
+			rgh_idx = stripped_line.find("B cardinality")
+			build_row_size_map[node_id] = stripped_line[lft_idx+9:rgh_idx]
+		elif find_probe_row_size and stripped_line.find("row-size") != -1:
+			find_probe_row_size = False
+			lft_idx = stripped_line.find("row-size=")
+			rgh_idx = stripped_line.find("B cardinality")
+			probe_row_size_map[node_id] = stripped_line[lft_idx+9:rgh_idx]
+			node_id = -1
+		elif stripped_line.startswith("Instance") and not average_fragment_metrics_skipped:
+			average_fragment_metrics_skipped = True
+		elif stripped_line.startswith("HASH_JOIN_NODE (id=") and average_fragment_metrics_skipped:
 
-				key = get_label(stripped_line)
-				if key != '' and key in func_map:
-					record.append(func_map[key](stripped_line))
+			non_child_time = float(get_non_child_time_in_str(stripped_line))
 
-					if key == 'UnpinTime':
+			curr_id = get_exec_node_id(stripped_line)
+			record.append(curr_id)
+			record.append(build_row_size_map[curr_id])
+			record.append(probe_row_size_map[curr_id])
+			within_hash_join_entry = True
+		elif average_fragment_metrics_skipped and within_hash_join_entry:
 
-						build_phase_rows_per_ns = 0.0
-						probe_phase_rows_per_ns = 0.0
+			key = get_label(stripped_line)
+			if key != '' and key in func_map:
+				record.append(func_map[key](stripped_line))
 
-						build_phase_time = float(record[6])
-						probe_phase_time = float(record[17])
-						# print(curr_id, non_child_time, build_phase_time, probe_phase_time)
-						if float(record[6]) != 0 and float(record[4]) != 0:
-							build_phase_rows_per_ns = float(record[4]) / float(record[6])
-						else:
-							build_phase_rows_per_ns = 0
-							
+				if key == 'UnpinTime':
 
-						if float(record[15] != 0) and float(record[17]) != 0:
-							probe_phase_rows_per_ns = float(record[15]) / float(record[17])
-						else:
-							probe_phase_rows_per_ns = 0
+					build_phase_rows_per_ns = 0.0
+					probe_phase_rows_per_ns = 0.0
 
-						# if non_child_time > 1000000000:
-						# 	# calculate the ratio 
-						# 	hash_join_time = build_phase_time + probe_phase_time
-						# 	build_phase_ratio = build_phase_time / hash_join_time
-						# 	probe_phase_ratio = probe_phase_time / hash_join_time
+					build_phase_time = float(record[6])
+					probe_phase_time = float(record[17])
+					build_rows = float(record[4])
+					probe_rows = float(record[15])
+					# print(curr_id, non_child_time, build_phase_time, probe_phase_time)
+					if build_phase_time != 0 and build_rows != 0:
+						build_phase_rows_per_ns = build_rows / build_phase_time
+					else:
+						build_phase_rows_per_ns = 0
+						
 
-						# 	build_phase_rows_per_ns	=  float(record[4]) / (non_child_time * build_phase_ratio)
-						# 	probe_phase_rows_per_ns	= float(record[15]) / (non_child_time * probe_phase_ratio)
+					if probe_rows != 0 and probe_phase_time != 0:
+						probe_phase_rows_per_ns = probe_rows / probe_phase_time
+					else:
+						probe_phase_rows_per_ns = 0
 
-						record.append("{0:.8f}".format(build_phase_rows_per_ns))
-						if curr_id not in build_rows_per_ns_hashjoin_node.keys():
-							build_rows_per_ns_hashjoin_node[curr_id] = []
-						build_rows_per_ns_hashjoin_node[curr_id].append(build_phase_rows_per_ns)
+					# if non_child_time > 1000000000:
+					# 	# calculate the ratio 
+					#hash_join_time = build_phase_time + probe_phase_time
+					#build_phase_ratio = build_phase_time / hash_join_time
+					#probe_phase_ratio = probe_phase_time / hash_join_time
 
-						record.append("{0:.8f}".format(probe_phase_rows_per_ns))
-						if curr_id not in probe_rows_per_ns_hashjoin_node.keys():
-							probe_rows_per_ns_hashjoin_node[curr_id] = []
-						probe_rows_per_ns_hashjoin_node[curr_id].append(probe_phase_rows_per_ns)
+					#build_phase_rows_per_ns	=  float(record[4]) / (non_child_time * build_phase_ratio)
+					#probe_phase_rows_per_ns	= float(record[15]) / (non_child_time * probe_phase_ratio)
 
-						within_hash_join_entry = False
-						csv_writer.writerows([record])
-						record = []
+					record.append("{0:.8f}".format(build_phase_rows_per_ns))
+					if curr_id not in build_rows_per_ns_hashjoin_node.keys():
+						build_rows_per_ns_hashjoin_node[curr_id] = []
+					build_rows_per_ns_hashjoin_node[curr_id].append(build_phase_rows_per_ns)
 
-			# enf if
-		# end for
+					record.append("{0:.8f}".format(probe_phase_rows_per_ns))
+					if curr_id not in probe_rows_per_ns_hashjoin_node.keys():
+						probe_rows_per_ns_hashjoin_node[curr_id] = []
+					probe_rows_per_ns_hashjoin_node[curr_id].append(probe_phase_rows_per_ns)
 
-		csv_writer.writerows([record])
+					within_hash_join_entry = False
+					record = []
+
+		# enf if
+	# end for
 
 	# end with
+	with open(output_file_path, 'a', newline='') as csv_file:
+		csv_writer = csv.writer(csv_file, delimiter=',')
 
-	for key in build_rows_per_ns_hashjoin_node.keys():
-		print('HASHJOIN_BUILD_COST,{0},{1}'.format(key, '{0:.8f}'.format(average(build_rows_per_ns_hashjoin_node[key]))),file=file_p)
+		for key in build_rows_per_ns_hashjoin_node.keys():
+			csv_writer.writerow(['HASHJOIN_BUILD_COST', key, '{0:.8f}'.format(average(build_rows_per_ns_hashjoin_node[key]))])
 
-	for key in probe_rows_per_ns_hashjoin_node.keys():
-		print('HASHJOIN_PROBE_COST,{0},{1}'.format(key, '{0:.8f}'.format(average(probe_rows_per_ns_hashjoin_node[key]))),file=file_p)
+		for key in probe_rows_per_ns_hashjoin_node.keys():
+			csv_writer.writerow(['HASHJOIN_PROBE_COST', key, '{0:.8f}'.format(average(probe_rows_per_ns_hashjoin_node[key]))])
 
 if __name__ == '__main__':
 
 	import platform
 	print(platform.python_version())
 
-	query_name = 'q19.sql.log'
-	profile = os.path.join(r'C:\Users\junliu2\Syncplicity\Benchmarks\1G_ALL_TEXT_50\2.7gz', query_name)
+	query_name = 'q27.sql.log'
+	profile = os.path.join(r'C:\Users\junliu2\Syncplicity\Benchmarks\executions\1G_2.7G_PARQUET_3000\parquet', query_name)
 	output = r'C:\Development\logs\metrics\hash-join'
 	sys.argv = ['hj_metrics.py', profile]
 

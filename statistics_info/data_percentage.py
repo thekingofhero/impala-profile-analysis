@@ -4,9 +4,10 @@ import string
 import re
 import csv
 
-from utility import get_size_in_bytes
-from utility import get_node_id
-from utility import get_partition_size
+
+from scripts.utility import get_size_in_bytes
+from scripts.utility import get_node_id
+from scripts.utility import get_partition_size
 
 def collect_data_percentage(partitioned_table_name, total_table_size_in_bytes, profile_path, plan_name):
 	# print('profile path [%s], plan name [%s]' % (profile_path, plan_name))
