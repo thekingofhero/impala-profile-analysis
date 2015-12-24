@@ -47,7 +47,7 @@ if __name__ == '__main__':
         os.system('rm -f ./output_dir/* ')
     elif 'Windows' in local_config()['current_sys']:
         os.system('del .\output_dir\*  /q ')
-    #Simulator inputs 
+    #Profile analysis
     if local_config()['sw_input'] is True:
         task_dic = get_task_dic()
         for task in task_dic.keys():
@@ -56,8 +56,6 @@ if __name__ == '__main__':
             obj = class_log(task_dic[task][0],task_dic[task][1],logging)
             obj.getAttri()
             obj.writeToXML()
-            #gather statistic and dist file 
-            gather_stats(task_dic[task][0],"output_dir")
             #hbase dist
             obj.writeToHBASEdist()
     
@@ -69,9 +67,4 @@ if __name__ == '__main__':
             #tuple.xml
             gather_slots_info(task_dic[task][0],os.path.join(os.path.join(local_config()['install_dir'],"output_dir",task_dic[task][1])))
         
-    #Run Benchmark   
-    if local_config()['sw_runBenchmark'] is True:
-        from benchmark.benchmark import runBenchMark
-        runBenchMark(local_config()['config_params_path'],
-                     local_config()['cof_dp_file'],
-                     local_config()['block_list'])
+    
